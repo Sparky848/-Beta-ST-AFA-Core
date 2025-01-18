@@ -1,0 +1,104 @@
+__Name = "English"
+__DebugOnly = false
+
+EditorGroups
+{
+	Starfleet = "Starfleet Modules"
+	Borg = "Borg Modules"
+}
+
+Inputs
+{
+	PartTriggers
+	{
+		
+	}
+	PartToggles
+	{
+		
+	}
+}
+
+PartTriggers
+{
+	
+}
+
+PartToggles
+{
+	
+}
+
+BuildBox
+{
+	
+}
+
+Stats
+{
+
+}
+
+StatCategories
+{
+	
+}
+
+Ammo
+{
+	
+}
+
+Resource
+{
+	Antimatter = "Antimatter"
+	AntimatterPlural = "Antimatter"
+	AntimatterDesc = "Highly unstable material, that explodes when it comes into contact with matter, thus it has to be stored in magnetic fields."
+	
+	Dilithium = "Dilithium Crystal"
+	DilithiumPlural = "Dilithium Crystals"
+	DilithiumDesc = "Complex and rare crystal that is needed for matter-antimatter reactions"
+	
+	TorpedoPart = "Torpedo Part"
+	TorpedoPartPlural = "Torpedo Parts"
+	TorpedoPartDesc = "Parts for arming torpedo based weapons"
+
+	TransphasicTorpedoPart = "Transphasic Torpedo Part"
+	TransphasicTorpedoPartPlural = "Transphasic Torpedo Parts"
+	TransphasicTorpedoPartDesc = "Parts for the transphasic torpedo"
+}
+
+Parts
+{
+	FactoryAntimatter = "Antimatter converter"
+	FactoryAntimatterIcon = "Antimatter converter"
+	FactoryAntimatterDesc = "Uses energy to crack hyperium into antimatter."
+	
+	FactoryTorpedoPart = "Torpedo Factory"
+	FactoryTorpedoPartIcon = "Torpedo Factory"
+	FactoryTorpedoPartDesc = "Uses antimatter to create torpedo parts"
+
+	FactoryTransphasicTorpedoPart = "Transphasic Torpedo Factory"
+	FactoryTransphasicTorpedoPartIcon = "Transphasic Torpedo Factory"
+	FactoryTransphasicTorpedoPartDesc = "Manufactures Dangerous Transphasic Torpedo Parts"
+	
+	CrewQuarters3x1 = "Twin Bunk"
+	CrewQuarters3x1Icon = "Twin Bunk"
+	CrewQuarters3x1Desc = "Provides beds for 4 crew."
+
+	CrewQuarters3x2 = "Quad Bunk"
+	CrewQuarters3x2Icon = "Quad Bunk"
+	CrewQuarters3x2Desc = "Provides beds for 8 crew."
+
+	CrewQuarters3x3 = "Dormitory"
+	CrewQuarters3x3Icon = "Dormitory"
+	CrewQuarters3x3Desc = "Provides beds for 16 crew."
+
+	CrewQuarters4x3 = "Barracks"
+	CrewQuarters4x3Icon = "Barracks"
+	CrewQuarters4x3Desc = "Provides beds for 24 crew."
+
+	CrewQuarters4x4 = "Residence"
+	CrewQuarters4x4Icon = "Residence"
+	CrewQuarters4x4Desc = "Provides beds for 30 crew."
+}

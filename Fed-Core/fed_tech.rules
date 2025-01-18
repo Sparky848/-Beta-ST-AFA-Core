@@ -1,0 +1,34 @@
+Techs
+[
+	// Techtree
+	{
+		Name = factory_antimatter
+		ID = stafa.factory_antimatter
+		NameKey = &<shared_parts/factories/factory_antimatter/factory_antimatter.rules>/Part/NameKey
+		DescriptionKey = &<shared_parts/factories/factory_antimatter/factory_antimatter.rules>/Part/DescriptionKey
+		Icon = &<shared_parts/factories/factory_antimatter/factory_antimatter.rules>/Part/EditorIcon
+		EditorGroup = &<shared_parts/factories/factory_antimatter/factory_antimatter.rules>/Part/EditorGroup
+		PartsUnlocked = [&&<shared_parts/factories/factory_antimatter/factory_antimatter.rules>/Part/ID]
+		Cost = 80000
+	}
+	{
+		Name = factory_torpedo
+		ID = stafa.factory_torpedo_parts
+		NameKey = &<shared_parts/factories/factory_torpedo/factory_torpedo_parts.rules>/Part/NameKey
+		DescriptionKey = &<shared_parts/factories/factory_torpedo/factory_torpedo_parts.rules>/Part/DescriptionKey
+		Icon = &<shared_parts/factories/factory_torpedo/factory_torpedo_parts.rules>/Part/EditorIcon
+		EditorGroup = &<shared_parts/factories/factory_torpedo/factory_torpedo_parts.rules>/Part/EditorGroup
+		PartsUnlocked = [&<shared_parts/factories/factory_torpedo/factory_torpedo_parts.rules>/Part/ID]
+		Cost = 10000
+	}
+	{
+		Name = factory_transphasic_torpedo
+		ID = stafa.factory_transphasic_torpedo_parts
+		NameKey = &<shared_parts/factories/factory_transphasic_torpedo/factory_transphasic_torpedo.rules>/Part/NameKey
+		DescriptionKey = &<shared_parts/factories/factory_transphasic_torpedo/factory_transphasic_torpedo.rules>/Part/DescriptionKey
+		Icon = &<shared_parts/factories/factory_transphasic_torpedo/factory_transphasic_torpedo.rules>/Part/EditorIcon
+		EditorGroup = &<shared_parts/factories/factory_transphasic_torpedo/factory_transphasic_torpedo.rules>/Part/EditorGroup
+		PartsUnlocked = [&<shared_parts/factories/factory_transphasic_torpedo/factory_transphasic_torpedo.rules>/Part/ID]
+		Cost = 1000000
+	}
+]
