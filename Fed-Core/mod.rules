@@ -41,6 +41,164 @@ Actions
 	{
 		Action = Add
 		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "StarfleetWeapons"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "EditorGroups/Starfleet_Weapons"	// to be changed to Starfleet
+			Icon
+			{
+				Texture
+				{
+					File = "images/starfleet_weapons.png"
+					MipLevels = 2
+					SampleMode = Linear
+				}
+			}
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "StarfleetFlight"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "EditorGroups/Starfleet_Flight"	// to be changed to Starfleet
+			Icon
+			{
+				Texture
+				{
+					File = "images/starfleet_flight.png"
+					MipLevels = 2
+					SampleMode = Linear
+				}
+			}
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "StarfleetPower"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "EditorGroups/Starfleet_Power"	// to be changed to Starfleet
+			Icon
+			{
+				Texture
+				{
+					File = "images/starfleet_power.png"
+					MipLevels = 2
+					SampleMode = Linear
+				}
+			}
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "StarfleetProduction"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "EditorGroups/Starfleet_Production"	// to be changed to Starfleet
+			Icon
+			{
+				Texture
+				{
+					File = "images/starfleet_production.png"
+					MipLevels = 2
+					SampleMode = Linear
+				}
+			}
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "StarfleetStructure"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "EditorGroups/Starfleet_Structure"	// to be changed to Starfleet
+			Icon
+			{
+				Texture
+				{
+					File = "images/starfleet_structure.png"
+					MipLevels = 2
+					SampleMode = Linear
+				}
+			}
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "StarfleetUtilities"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "EditorGroups/Starfleet_Utilities"	// to be changed to Starfleet
+			Icon
+			{
+				Texture
+				{
+					File = "images/starfleet_utilities.png"
+					MipLevels = 2
+					SampleMode = Linear
+				}
+			}
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "StarfleetDefences"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "EditorGroups/Starfleet_Defences"	// to be changed to Starfleet
+			Icon
+			{
+				Texture
+				{
+					File = "images/starfleet_defences.png"
+					MipLevels = 2
+					SampleMode = Linear
+				}
+			}
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "Dilithium"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "Resource/Dilithium"
+			Icon
+			{
+				Texture = &<resources/dilithium/dilithium.rules>/Overlay/Texture
+				VertexColor = [0, 183, 255]
+			}
+			SortOrder = 300
+		}
+	}
+	
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
 		Name = "Borg"
 		CreateIfNotExisting = true
 		IgnoreIfNotExisting = true
@@ -70,60 +228,60 @@ Actions
 		IgnoreIfNotExisting = false
 	}
 
-	{
-        Action = Add
-        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
-        ToAdd
-        {
-            Category = "warpcore"
-            Max = 1000
-        }
-    }
-	{
-        Action = Add
-        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
-        ToAdd
-        {
-            Category = "uses_torpedos"
-            Max = 1000
-        }
-    }
-	{
-        Action = Add
-        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
-        ToAdd
-        {
-            Category = "uses_torpedos_deck"
-            Max = 1000
-        }
-    }
-	{
-        Action = Add
-        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
-        ToAdd
-        {
-            Category = "shieldcore"
-            Max = 1000
-        }
-    }
-	{
-        Action = Add
-        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
-        ToAdd
-        {
-            Category = "nacelle"
-            Max = 1000
-        }
-    }
-	{
-        Action = Add
-        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
-        ToAdd
-        {
-            Category = "readyroom"
-            Max = 1000
-        }
-    }
+//	{
+ //       Action = Add
+//        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
+ //       ToAdd
+ //       {
+//            Category = "warpcore"
+//            Max = 1000
+//        }
+//    }
+//	{
+//        Action = Add
+//        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
+//        ToAdd
+//        {
+//            Category = "uses_torpedos"
+//            Max = 1000
+//        }
+//    }
+//	{
+//        Action = Add
+//        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
+//        ToAdd
+//        {
+//            Category = "uses_torpedos_deck"
+//            Max = 1000
+//        }
+//    }
+//	{
+//        Action = Add
+ //       AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
+ //       ToAdd
+ //       {
+ //           Category = "shieldcore"
+//            Max = 1000
+ //       }
+ //   }
+//	{
+  //      Action = Add
+  //      AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
+  //      ToAdd
+  //      {
+   //         Category = "nacelle"
+   //         Max = 1000
+  ////      }
+  //  }
+////	{
+  //      Action = Add
+  //      AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
+ //       ToAdd
+ //       {
+ //           Category = "readyroom"
+//            Max = 1000
+//        }
+//    }
 	{
 		Action = Add
 		AddTo = "<./Data/gui/game/parts/part_stats.rules>/PartStats"
@@ -254,7 +412,22 @@ Actions
 			{ ResourceType=transphasic_torpedo_part;   			RandomWeight=10;  RandomQuantity=[10%, 25%]; }
 		]
 	}
+	//******************** Asteroids ********************
+	{
+		Action = AddMany
+		AddTo = "<./Data/ships/asteroid/asteroid.rules>/Asteroid/Parts"
+		ManyToAdd
+		[
 
+			&<asteroids/deposit_dilithium/deposit_dilithium_1x.rules>/Part
+			&<asteroids/deposit_dilithium/deposit_dilithium_1x_hard.rules>/Part
+			&<asteroids/deposit_dilithium/deposit_dilithium_2x.rules>/Part
+			&<asteroids/deposit_dilithium/deposit_dilithium_2x_hard.rules>/Part
+			&<asteroids/deposit_dilithium/deposit_dilithium_3x.rules>/Part
+			&<asteroids/deposit_dilithium/deposit_dilithium_3x_hard.rules>/Part
+
+		]
+	}
 	//******************** UI ********************
 
 ]

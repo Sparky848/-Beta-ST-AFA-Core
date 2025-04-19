@@ -4,6 +4,13 @@ __DebugOnly = false
 EditorGroups
 {
 	Starfleet = "Starfleet Modules"
+	Starfleet_Weapons = "Starfleet Weapons"
+	Starfleet_Flight = "Starfleet Flight"
+	Starfleet_Power = "Starfleet Power"
+	Starfleet_Production = "Starfleet Production"
+	Starfleet_Structure = "Starfleet Structure"
+	Starfleet_Utilities = "Starfleet Utilities"
+	Starfleet_Defences = "Starfleet Defences"
 	Borg = "Borg Modules"
 }
 
@@ -80,7 +87,7 @@ Parts
 
 	FactoryTransphasicTorpedoPart = "Transphasic Torpedo Factory"
 	FactoryTransphasicTorpedoPartIcon = "Transphasic Torpedo Factory"
-	FactoryTransphasicTorpedoPartDesc = "Manufactures Dangerous Transphasic Torpedo Parts"
+	FactoryTransphasicTorpedoPartDesc = "Manufactures dangerous transphasic torpedo parts from iron, copper, antimatter and processors"
 	
 	CrewQuarters3x1 = "Twin Bunk"
 	CrewQuarters3x1Icon = "Twin Bunk"
