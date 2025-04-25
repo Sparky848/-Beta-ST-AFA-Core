@@ -106,7 +106,7 @@ Actions
 		IgnoreIfNotExisting = true
 		ToAdd
 		{
-			NameKey = "EditorGroups/Starfleet_Production"	// to be changed to Starfleet
+			NameKey = "EditorGroups/Starfleet_Production"
 			Icon
 			{
 				Texture
