@@ -43,7 +43,7 @@ BuildBox
 
 Stats
 {
-
+	AntimatterCapacityFmt = "<white>Antimatter Capacity:</white> <good>{0}</good>"
 }
 
 StatCategories
@@ -87,7 +87,7 @@ Parts
 
 	FactoryTransphasicTorpedoPart = "Transphasic Torpedo Factory"
 	FactoryTransphasicTorpedoPartIcon = "Transphasic Torpedo Factory"
-	FactoryTransphasicTorpedoPartDesc = "Manufactures dangerous transphasic torpedo parts from iron, copper, antimatter and processors"
+	FactoryTransphasicTorpedoPartDesc = "Manufactures dangerous transphasic torpedo parts from Iron<image name='iron'/>, Copper<image name='copper'/>, Antimatter<image name='antimatter'/> and Processors<image name='processor'/>"
 	
 	CrewQuarters3x1 = "Twin Bunk"
 	CrewQuarters3x1Icon = "Twin Bunk"

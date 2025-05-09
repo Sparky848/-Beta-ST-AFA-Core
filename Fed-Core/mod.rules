@@ -429,5 +429,108 @@ Actions
 		]
 	}
 	//******************** UI ********************
-
+	{
+		Action = AddMany
+		AddTo = "<./Data/gui/game/parts/part_stats.rules>/PartStats"
+		ManyToAdd
+		[
+			{
+				ID = AntimatterCapacity
+				FormatKey = "Stats/AntimatterCapacityFmt"
+			}
+		]
+	}
+	//Text sprites
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/gui/text_sprites.rules>"
+		Overrides
+		{
+			hyperium
+			{
+				Texture
+				{
+					File = "./Data/resources/hyperium/icon.png"
+					MipLevels = max
+					SampleMode = Linear
+				}
+				Size = [1, 1]
+				ProportionalSize = true
+			}
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/gui/text_sprites.rules>"
+		Overrides
+		{
+			antimatter
+			{
+				Texture
+				{
+					File = "resources/antimatter/antimatter.png"
+					MipLevels = max
+					SampleMode = Linear
+				}
+				Size = [1, 1]
+				ProportionalSize = true
+			}
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/gui/text_sprites.rules>"
+		Overrides
+		{
+			iron
+			{
+				Texture
+				{
+					File = "./Data/resources/iron/icon.png"
+					MipLevels = max
+					SampleMode = Linear
+				}
+				Size = [1, 1]
+				ProportionalSize = true
+			}
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/gui/text_sprites.rules>"
+		Overrides
+		{
+			copper
+			{
+				Texture
+				{
+					File = "./Data/resources/copper/icon.png"
+					MipLevels = max
+					SampleMode = Linear
+				}
+				Size = [1, 1]
+				ProportionalSize = true
+			}
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/gui/text_sprites.rules>"
+		Overrides
+		{
+			processor
+			{
+				Texture
+				{
+					File = "./Data/resources/processor/icon.png"
+					MipLevels = max
+					SampleMode = Linear
+				}
+				Size = [1, 1]
+				ProportionalSize = true
+			}
+		}
+	}
 ]
+
+	
