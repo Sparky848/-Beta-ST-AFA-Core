@@ -3,6 +3,7 @@ NameKey = "Resource/Dilithium"
 PluralNameKey = "Resource/DilithiumPlural"
 DescriptionKey = "Resource/DilithiumDesc"
 BuyPrice = 100
+AsteroidDensity = 0.04//gold is 0.08 @500credits
 MaxPerNugget = 1
 MaxStackSize = 5
 FlexGridPriorityKey = "flex_grid_diamond"

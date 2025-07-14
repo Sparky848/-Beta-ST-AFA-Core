@@ -5,4 +5,10 @@ Doodads
 	&<../resources/torpedo_part/doodad_resource_torpedo_part.rules>
 	&<../resources/dilithium/doodad_resource_dilithium.rules>
 	&<../resources/transphasic_torpedo_part/doodad_resource_transphasic_torpedo_part.rules>
+	//Asteroids
+	&<asteroids/dilithium/doodad_asteroid_dilithium_s.rules>
+	&<asteroids/dilithium/doodad_asteroid_dilithium_m.rules>
+	&<asteroids/dilithium/doodad_asteroid_dilithium_l.rules>
+	&<asteroids/dilithium/doodad_asteroid_dilithium_xl.rules>
+	&<asteroids/dilithium/doodad_asteroid_dilithium_xxl.rules>
 ]

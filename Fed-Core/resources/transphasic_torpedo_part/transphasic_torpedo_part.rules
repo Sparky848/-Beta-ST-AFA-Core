@@ -35,7 +35,7 @@ DeathHitEffects // Scaled with stack size.
 [
 	{
 		Type = ExplosiveDamage
-		TotalDamage = 8000
+		TotalDamage = 16000
 		Radius = 24
 		Delay = .05
 		FireChancePerNDamage = 80%
@@ -50,7 +50,7 @@ DeathHitEffects // Scaled with stack size.
 	}
 	{
 		Type = ExplosiveDamage
-		TotalDamage = 6000
+		TotalDamage = 14000
 		Radius = 14
 		Delay = .05
 		Filter

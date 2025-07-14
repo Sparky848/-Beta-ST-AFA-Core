@@ -406,10 +406,10 @@ Actions
 		AddTo = "<modes/career/career.rules>/BaseTradeShip/ResourcesCarried"
 		ManyToAdd
 		[
-			{ ResourceType=antimatter;              RandomWeight=5;  RandomQuantity=[50%, 100%]; }
-			{ ResourceType=dilithium;           	RandomWeight=5;  RandomQuantity=[50%, 100%]; }
-			{ ResourceType=torpedo_part;   			RandomWeight=5;  RandomQuantity=[75%, 100%]; }
-			{ ResourceType=transphasic_torpedo_part;   			RandomWeight=10;  RandomQuantity=[10%, 25%]; }
+			{ ResourceType=antimatter;              RandomWeight=19;  RandomQuantity=[50%, 100%]; }
+			{ ResourceType=dilithium;           	RandomWeight=2;  RandomQuantity=[20%, 40%]; }
+			{ ResourceType=torpedo_part;   			RandomWeight=20;  RandomQuantity=[75%, 100%]; }
+			{ ResourceType=transphasic_torpedo_part;   			RandomWeight=3;  RandomQuantity=[10%, 25%]; }
 		]
 	}
 	//******************** Asteroids ********************
@@ -420,12 +420,41 @@ Actions
 		[
 
 			&<asteroids/deposit_dilithium/deposit_dilithium_1x.rules>/Part
-			&<asteroids/deposit_dilithium/deposit_dilithium_1x_hard.rules>/Part
+			//&<asteroids/deposit_dilithium/deposit_dilithium_1x_hard.rules>/Part
 			&<asteroids/deposit_dilithium/deposit_dilithium_2x.rules>/Part
-			&<asteroids/deposit_dilithium/deposit_dilithium_2x_hard.rules>/Part
+			//&<asteroids/deposit_dilithium/deposit_dilithium_2x_hard.rules>/Part
 			&<asteroids/deposit_dilithium/deposit_dilithium_3x.rules>/Part
-			&<asteroids/deposit_dilithium/deposit_dilithium_3x_hard.rules>/Part
+			//&<asteroids/deposit_dilithium/deposit_dilithium_3x_hard.rules>/Part
 
+		]
+	}
+	{
+		Action = AddMany
+		AddTo = "<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes"
+		ManyToAdd
+		[
+			{ Type=stafa.asteroid_dilithium_s;     ChanceWeight=1/16; }
+			{ Type=stafa.asteroid_dilithium_m;     ChanceWeight=1/32; }
+			{ Type=stafa.asteroid_dilithium_l;     ChanceWeight=1/64; }
+		]
+	}
+	{
+		Action = AddMany
+		AddTo = "<./Data/modes/career/sectors/sysgen_asteroids.rules>/RareAsteroidTypes"
+		ManyToAdd
+		[
+			{ Type=stafa.asteroid_dilithium_xl;     ChanceWeight=1/2; }
+			{ Type=stafa.asteroid_dilithium_xxl;     ChanceWeight=1/2; }
+		]
+	}
+	{
+		Action = AddMany
+		AddTo = "<./Data/modes/career/sectors/sysgen_suns.rules>/SunAsteroidTypes"
+		ManyToAdd
+		[
+			{ Type=stafa.asteroid_dilithium_l;     ChanceWeight=1; }
+			{ Type=stafa.asteroid_dilithium_xl;     ChanceWeight=1/2; }
+			{ Type=stafa.asteroid_dilithium_xxl;     ChanceWeight=1/4; }
 		]
 	}
 	//******************** UI ********************
@@ -523,6 +552,42 @@ Actions
 				Texture
 				{
 					File = "./Data/resources/processor/icon.png"
+					MipLevels = max
+					SampleMode = Linear
+				}
+				Size = [1, 1]
+				ProportionalSize = true
+			}
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/gui/text_sprites.rules>"
+		Overrides
+		{
+			transphasic_torpedo_part
+			{
+				Texture
+				{
+					File = "resources/transphasic_torpedo_part/icon.png"
+					MipLevels = max
+					SampleMode = Linear
+				}
+				Size = [1, 1]
+				ProportionalSize = true
+			}
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/gui/text_sprites.rules>"
+		Overrides
+		{
+			battery
+			{
+				Texture
+				{
+					File = "./Data/resources/battery/battery_small.png"
 					MipLevels = max
 					SampleMode = Linear
 				}

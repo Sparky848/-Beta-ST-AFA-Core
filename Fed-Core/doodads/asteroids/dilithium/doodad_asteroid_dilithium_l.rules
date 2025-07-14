@@ -1,13 +1,13 @@
-ID = cosmoteer.asteroid_gold_l
+ID = stafa.asteroid_dilithium_l
 Type = GeneratedShip
-DescriptionKey = "Doodads/AsteroidGold_L"
+DescriptionKey = "Doodads/AsteroidDilithium_L"
 CategoryKey = "Doodads/Asteroids"
 Tags = [asteroid]
 Icon
 {
 	Texture
 	{
-		File = "asteroid_gold_l.png"
+		File = "asteroid_dilithium_l.png"
 		MipLevels = 2
 		SampleMode = Linear
 	}
@@ -40,12 +40,12 @@ Generator
 			IsEnabled = true
 			Parts
 			[
-				cosmoteer.deposit_gold_1x
-				cosmoteer.deposit_gold_2x
-				cosmoteer.deposit_gold_3x
+				stafa.deposit_dilithium_1x
+				stafa.deposit_dilithium_2x
+				stafa.deposit_dilithium_3x
 			]
-			MinPartsFraction = 0.125 * (&<./Data/resources/gold/gold.rules>/AsteroidDensity)
-			MaxPartsFraction = 0.25 * (&<./Data/resources/gold/gold.rules>/AsteroidDensity)
+			MinPartsFraction = 0.125 * (&<../../../resources/dilithium/dilithium.rules>/AsteroidDensity)
+			MaxPartsFraction = 0.25 * (&<../../../resources/dilithium/dilithium.rules>/AsteroidDensity)
 			MinPartsPerDeposit = 3
 			MaxPartsPerDeposit = 10
 		}
@@ -87,14 +87,14 @@ Generator
 			Name = EnlargeTilesStage
 			IsEnabled = true
 		}
-		{
-			Type = ConvertTypeStage
-			Conversions = &<../hard_conversions.rules>/Conversions
-			ChanceAtCenter = 1.2
-			ChanceAtEdge = 0
-			Name = ConvertTypeStage
-			IsEnabled = true
-			ChanceExponent = 1
-		}
+//		{
+//			Type = ConvertTypeStage
+//			Conversions = &<../hard_conversions.rules>/Conversions
+//			ChanceAtCenter = 1.2
+//			ChanceAtEdge = 0
+//			Name = ConvertTypeStage
+//			IsEnabled = true
+//			ChanceExponent = 1
+//		}
 	]
 }

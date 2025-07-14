@@ -56,6 +56,14 @@ Ammo
 	
 }
 
+Doodads
+{
+	AsteroidDilithium_S = "Dilithium Asteroid (S)"
+	AsteroidDilithium_M = "Dilithium Asteroid (M)"
+	AsteroidDilithium_L = "Dilithium Asteroid (L)"
+	AsteroidDilithium_XL = "Dilithium Asteroid (XL)"
+	AsteroidDilithium_XXL = "Dilithium Asteroid (XXL)"
+}
 Resource
 {
 	Antimatter = "Antimatter"
@@ -108,4 +116,17 @@ Parts
 	CrewQuarters4x4 = "Residence"
 	CrewQuarters4x4Icon = "Residence"
 	CrewQuarters4x4Desc = "Provides beds for 30 crew."
+
+	//Asteroids
+	DepositDilithium1x = "Dilithium Deposit (1x Soft)"
+	DepositDilithium1xIcon = "Dilithium Deposit (1x Soft)"
+	//DepositDilithium1xDesc = "Dilithium Deposit (1x Soft)"
+
+	DepositDilithium2x = "Dilithium Deposit (2x Soft)"
+	DepositDilithium2xIcon = "Dilithium Deposit (2x Soft)"
+	//DepositDilithium2xDesc = "Dilithium Deposit (2x Soft)"
+
+	DepositDilithium3x = "Dilithium Deposit (3x Soft)"
+	DepositDilithium3xIcon = "Dilithium Deposit (3x Soft)"
+	//DepositDilithium3xDesc = "Dilithium Deposit (3x Soft)"
 }
