@@ -418,14 +418,12 @@ Actions
 		AddTo = "<./Data/ships/asteroid/asteroid.rules>/Asteroid/Parts"
 		ManyToAdd
 		[
-
 			&<asteroids/deposit_dilithium/deposit_dilithium_1x.rules>/Part
 			//&<asteroids/deposit_dilithium/deposit_dilithium_1x_hard.rules>/Part
 			&<asteroids/deposit_dilithium/deposit_dilithium_2x.rules>/Part
 			//&<asteroids/deposit_dilithium/deposit_dilithium_2x_hard.rules>/Part
 			&<asteroids/deposit_dilithium/deposit_dilithium_3x.rules>/Part
 			//&<asteroids/deposit_dilithium/deposit_dilithium_3x_hard.rules>/Part
-
 		]
 	}
 	{
