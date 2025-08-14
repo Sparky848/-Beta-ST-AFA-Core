@@ -9,7 +9,17 @@ Techs
 		Icon = &<shared_parts/factories/factory_antimatter/factory_antimatter.rules>/Part/EditorIcon
 		EditorGroup = &<shared_parts/factories/factory_antimatter/factory_antimatter.rules>/Part/EditorGroup
 		PartsUnlocked = [&&<shared_parts/factories/factory_antimatter/factory_antimatter.rules>/Part/ID]
-		Cost = 80000
+		Cost = 6000
+	}
+	{
+		Name = bulk_antimatter_crafter
+		ID = stafa.bulk_antimatter_crafter
+		NameKey = &<shared_parts/factories/bulk_antimatter_crafter/bulk_antimatter_crafter.rules>/Part/NameKey
+		DescriptionKey = &<shared_parts/factories/bulk_antimatter_crafter/bulk_antimatter_crafter.rules>/Part/DescriptionKey
+		Icon = &<shared_parts/factories/bulk_antimatter_crafter/bulk_antimatter_crafter.rules>/Part/EditorIcon
+		EditorGroup = &<shared_parts/factories/bulk_antimatter_crafter/bulk_antimatter_crafter.rules>/Part/EditorGroup
+		PartsUnlocked = [&&<shared_parts/factories/bulk_antimatter_crafter/bulk_antimatter_crafter.rules>/Part/ID]
+		Cost = 100000
 	}
 	{
 		Name = factory_torpedo
@@ -19,7 +29,7 @@ Techs
 		Icon = &<shared_parts/factories/factory_torpedo/factory_torpedo_parts.rules>/Part/EditorIcon
 		EditorGroup = &<shared_parts/factories/factory_torpedo/factory_torpedo_parts.rules>/Part/EditorGroup
 		PartsUnlocked = [&<shared_parts/factories/factory_torpedo/factory_torpedo_parts.rules>/Part/ID]
-		Cost = 10000
+		Cost = 8000
 	}
 	{
 		Name = factory_transphasic_torpedo

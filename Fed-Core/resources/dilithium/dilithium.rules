@@ -9,6 +9,7 @@ MaxStackSize = 5
 FlexGridPriorityKey = "flex_grid_diamond"
 FlexGridDefaultPriority = 1
 DropRates = &<./Data/resources/resources.rules>/RareMaterialDropRates
+Rarity = RawRare
 
 Icon
 {
@@ -38,7 +39,10 @@ DeathHitEffects // Scaled with stack size.
 		TotalDamage = 8000
 		Radius = 14
 		Delay = .05
-		FireChancePerNDamage = 50%
+		StatusType = cosmoteer.fire
+		StatusChancePerNDamage = 50%
+		StatusValue = 1
+		StatusValueType = Interpolated
 		NDamage = 1000
 		CrewKillChance = 30%
 		Filter
@@ -62,7 +66,23 @@ DeathHitEffects // Scaled with stack size.
 		}
 	}
 ]
-
+HitResponse
+{
+	HitEffects = &~/DeathHitEffects
+	MediaEffects = &~/DeathMediaEffects
+	Chance = 0
+	ChancePerNDamage = 0
+	RequireDirectHit = true
+	DamageTypeOverrides
+	{
+		fire
+		{
+			ChancePerNDamage = 2.5%
+			NDamage = &<./Data/statuses/fire/fire.rules>/DAMAGE_PER_TICK
+		}
+	}
+}
+DeathMediaEffects = &/COMMON_EFFECTS/MedPartDestroyed
 NuggetSprite
 {
 	File = "dilithium.png"

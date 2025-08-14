@@ -1,7 +1,7 @@
 ID = "st-afa.beta_coremod"
 Name = "[Beta] ST-AFA - Core"
 Version = 0.2.2
-CompatibleGameVersions = ["0.28.1"]
+CompatibleGameVersions = ["0.30.0"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
 Logo = logo.png

@@ -38,7 +38,10 @@ DeathHitEffects // Scaled with stack size.
 		TotalDamage = 16000
 		Radius = 24
 		Delay = .05
-		FireChancePerNDamage = 80%
+		StatusType = cosmoteer.fire
+		StatusChancePerNDamage = 80%
+		StatusValue = 1
+		StatusValueType = Interpolated
 		NDamage = 500
 		CrewKillChance = 65%
 		Filter
@@ -62,7 +65,22 @@ DeathHitEffects // Scaled with stack size.
 		}
 	}
 ]
-
+HitResponse
+{
+	HitEffects = &~/DeathHitEffects
+	MediaEffects = &~/DeathMediaEffects
+	Chance = 0
+	ChancePerNDamage = 0
+	RequireDirectHit = true
+	DamageTypeOverrides
+	{
+		fire
+		{
+			ChancePerNDamage = 5%
+			NDamage = &<./Data/statuses/fire/fire.rules>/DAMAGE_PER_TICK
+		}
+	}
+}
 DeathMediaEffects = &/COMMON_EFFECTS/MedPartDestroyed
 
 NuggetSprite

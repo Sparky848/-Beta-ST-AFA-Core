@@ -85,9 +85,16 @@ Resource
 
 Parts
 {
-	FactoryAntimatter = "Antimatter converter"
-	FactoryAntimatterIcon = "Antimatter converter"
+	FactoryAntimatter = "Antimatter Converter"
+	FactoryAntimatterIcon = "Antimatter Converter"
 	FactoryAntimatterDesc = "Uses energy to crack hyperium into antimatter."
+
+	BulkAntimatterCrafter = "Bulk Antimatter Crafter"
+	BulkAntimatterCrafterIcon = "Bulk Antimatter Crafter"
+	BulkAntimatterCrafterDesc = "Uses both Hyperium and Dilithium to create Antimatter in batches of 20 (4 stacks)"\
+								"\n <cyan>1 Hyperium = 1 Antimatter</cyan>"\
+								"\n <cyan>1 Dilithium = 10 Antimatter</cyan>"\
+								"\n<good> This factory only produces in batches of 20, it can consume hyperium and dilithium at the same time however </good>"
 	
 	FactoryTorpedoPart = "Torpedo Factory"
 	FactoryTorpedoPartIcon = "Torpedo Factory"
