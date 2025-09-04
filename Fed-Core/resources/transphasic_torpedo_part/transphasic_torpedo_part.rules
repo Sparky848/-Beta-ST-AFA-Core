@@ -6,7 +6,7 @@ BuyPrice = 14000
 SellPrice = (&BuyPrice) / 10
 MaxPerNugget = 1
 MaxStackSize = 10
-FlexGridPriorityKey = "flex_grid_missile_part_he"
+FlexGridPriorityKey = "flex_grid_transphasic_torpedo_part"
 FlexGridDefaultPriority = 1
 DropRates = &<./Data/resources/resources.rules>/AmmoDropRates
 
