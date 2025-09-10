@@ -239,9 +239,14 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			[
 				: /BASE_SOUNDS/AudioInterior
 				{
-					Sound = "./Data/ships/terran/factory_ammo/bullet_create.wav"
-					Volume = .1
-					Speed = .5
+					RandomSounds = ["./Data/ships/terran/factory_nuke/sounds/nuclear_missiles_factory_putdown_01.wav",
+									"./Data/ships/terran/factory_nuke/sounds/nuclear_missiles_factory_putdown_02.wav",
+									"./Data/ships/terran/factory_nuke/sounds/nuclear_missiles_factory_putdown_03.wav",
+									"./Data/ships/terran/factory_nuke/sounds/nuclear_missiles_factory_putdown_04.wav",
+									"./Data/ships/terran/factory_nuke/sounds/nuclear_missiles_factory_putdown_05.wav"]
+					Volume = 1
+					Db = -2
+					Speed = 1
 					SpeedVariation = .05
 				}
 			]
@@ -1107,9 +1112,12 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 
 						: /BASE_SOUNDS/AudioExterior
 						{
-							Sound = "./Data/shots/disruptor_bolt/discharge.wav"
+							RandomSounds = ["./Data/shots/disruptor_bolt/sounds/disruptor_discharge_01.wav",
+											"./Data/shots/disruptor_bolt/sounds/disruptor_discharge_02.wav",
+											"./Data/shots/disruptor_bolt/sounds/disruptor_discharge_03.wav",
+											"./Data/shots/disruptor_bolt/sounds/disruptor_discharge_04.wav"]
 							Volume = 1
-							SpeedVariation = .2
+							SpeedVariation = .15
 						}
 					]
 				}
