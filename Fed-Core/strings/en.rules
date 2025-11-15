@@ -44,6 +44,12 @@ BuildBox
 Stats
 {
 	AntimatterCapacityFmt = "<white>Antimatter Capacity:</white> <good>{0}</good>"
+	AntimatterPerTorpedoPartFmt = "<white>Antimatter Per Photon Part:</white> <good>{0}</good>"
+	AntimatterPerQuantumTorpedoPartFmt = "<white>Antimatter Per Quantum Part:</white> <good>{0}</good>"
+	TorpedoPartAntimatterUsageFmt = "<white>Antimatter Per Photon Part:</white> <good>{0}</good><gray>/sec</gray>"
+	QuantumTorpedoPartAntimatterUsageFmt = "<white>Antimatter Per Quantum Part:</white> <good>{0}</good><gray>/sec</gray>"
+	PowerPerTorpedoPartFmt = "<white>Power Per Photon Part:</white> <good>{0}</good><gray>/sec</gray>"
+	PowerPerQuantumTorpedoPartFmt = "<white>Power Per Quantum Part:</white> <good>{0}</good><gray>/sec</gray>"
 }
 
 StatCategories
@@ -78,9 +84,25 @@ Resource
 	TorpedoPartPlural = "Torpedo Parts"
 	TorpedoPartDesc = "Parts for arming torpedo based weapons"
 
+	QuantumTorpedoPart = "Quantum Torpedo Part"
+	QuantumTorpedoPartPlural = "Quantum Torpedo Parts"
+	QuantumTorpedoPartDesc = "Parts for arming quantum torpedo based weapons"
+
 	TransphasicTorpedoPart = "Transphasic Torpedo Part"
 	TransphasicTorpedoPartPlural = "Transphasic Torpedo Parts"
 	TransphasicTorpedoPartDesc = "Parts for the transphasic torpedo"
+
+	CloudyGas = "Cloudy Gas Canister"
+	CloudyGasPlural = "Cloudy Gas Canisters"
+	CloudyGasDesc = "<color r='202' g='230' b='253' a='255'><i>Replicated canister containing beautiful swirls of blue and white gases</i></color>"
+
+	ElectronGas = "Electron Gas Canister"
+	ElectronGasPlural = "Electron Gas Canisters"
+	ElectronGasDesc = "<color r='193' g='250' b='116' a='255'><i>Replicated canister containing wild jolts of yellow-green gases</i></color>"
+
+	IonGas = "Ion Gas Canister"
+	IonGasPlural = "Ion Gas Canisters"
+	IonGasDesc = "<color r='248' g='59' b='56' a='255'><i>Replicated canister containing angry thuds of deep red gases</i></color>"
 }
 
 Parts
@@ -98,12 +120,25 @@ Parts
 	
 	FactoryTorpedoPart = "Torpedo Factory"
 	FactoryTorpedoPartIcon = "Torpedo Factory"
-	FactoryTorpedoPartDesc = "Uses antimatter to create torpedo parts"
+	FactoryTorpedoPartDesc = "Uses antimatter to create torpedo parts\n"\
+							"<red><s20>Warning: You will lose your resources if you switch torpedo modes while there are torpedos in storage</s20></red>"
 
 	FactoryTransphasicTorpedoPart = "Transphasic Torpedo Factory"
 	FactoryTransphasicTorpedoPartIcon = "Transphasic Torpedo Factory"
 	FactoryTransphasicTorpedoPartDesc = "Manufactures dangerous transphasic torpedo parts from Iron<image name='iron'/>, Copper<image name='copper'/>, Antimatter<image name='antimatter'/> and Processors<image name='processor'/>"
 	
+	GasFabricator1x1 = "Gas Fabricator 1x1"
+	GasFabricator1x1Icon = "Gas Fabricator 1x1"
+	GasFabricator1x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color> and <color r='193' g='250' b='116' a='255'>Electron Gas Canisters</color> when inside their respective nebulae"
+
+	GasFabricator2x1 = "Gas Fabricator 2x1"
+	GasFabricator2x1Icon = "Gas Fabricator 2x1"
+	GasFabricator2x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color>, <color r='193' g='250' b='116' a='255'>Electron</color> and <color r='248' g='59' b='56' a='255'>Ion</color>  Gas Canisters when inside their respective nebulae"
+
+	GasFabricator3x1 = "Gas Fabricator 3x1"
+	GasFabricator3x1Icon = "Gas Fabricator 3x1"
+	GasFabricator3x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color>, <color r='193' g='250' b='116' a='255'>Electron</color> and <color r='248' g='59' b='56' a='255'>Ion</color>  Gas Canisters when inside their respective nebulae"
+
 	CrewQuarters3x1 = "Twin Bunk"
 	CrewQuarters3x1Icon = "Twin Bunk"
 	CrewQuarters3x1Desc = "Provides beds for 4 crew."

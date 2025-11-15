@@ -1,0 +1,13 @@
+ID = stafa.resource_cloudy_gas
+Type = Resource
+DescriptionKey = "Resource/CloudyGas"
+CategoryKey = "Doodads/Resources"
+Icon
+{
+	Texture
+	{
+		File = "cloudy_gas.png"
+		MipLevels = 2
+	}
+}
+ResourceType = cloudy_gas

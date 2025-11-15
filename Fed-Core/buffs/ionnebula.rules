@@ -1,0 +1,7 @@
+Buffs
+[
+		{
+			BuffType = IonNebula
+			BuffAmount = 100%
+		}
+]

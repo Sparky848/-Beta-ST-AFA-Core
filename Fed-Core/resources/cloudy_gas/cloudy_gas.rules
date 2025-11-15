@@ -1,0 +1,119 @@
+ID = cloudy_gas
+NameKey = "Resource/CloudyGas"
+PluralNameKey = "Resource/CloudyGasPlural"
+DescriptionKey = "Resource/CloudyGasDesc"
+BuyPrice = 100
+MaxPerNugget = 1
+MaxStackSize = 5
+FlexGridPriorityKey = "flex_grid_cloudy_gas"
+FlexGridDefaultPriority = 1
+DropRates = &<./Data/resources/resources.rules>/CommonMaterialDropRates
+
+Icon
+{
+	Texture
+	{
+		File = "icon.png"
+		MipLevels = max
+	}
+	Size = [64, 64]
+}
+
+Overlay
+{
+	Texture
+	{
+		File = "overlay.png"
+		SampleMode = Linear
+		MipLevels = max
+	}
+	Size = [1, 1]
+}
+
+DeathHitEffects // Scaled with stack size.
+[
+	{
+		Type = ExplosiveDamage
+		TotalDamage = { BaseValue = 2000; EffectScaleExponent = 1 }
+		Radius = 3
+		Delay = .05
+//		StatusType = cosmoteer.fire
+//		StatusChancePerNDamage = 50%
+//		StatusValue = 1
+//		StatusValueType = Interpolated
+//		NDamage = 1000
+		CrewKillChance = 5%
+		Filter
+		{
+			OperationalHealth = true
+			StructuralHealth = false
+			Friendlies = true
+		}
+	}
+	{
+		Type = ExplosiveDamage
+		TotalDamage = { BaseValue = 1000; EffectScaleExponent = 1 }
+		Radius = 3
+		Delay = .05
+		Filter
+		{
+			OperationalHealth = false
+			StructuralHealth = true
+			Friendlies = true
+			Crew = false
+		}
+	}
+]
+HitResponse
+{
+	HitEffects = &~/DeathHitEffects
+	MediaEffects = &~/DeathMediaEffects
+	Chance = 0
+	ChancePerNDamage = 0
+	RequireDirectHit = true
+	DamageTypeOverrides
+	{
+		fire
+		{
+			ChancePerNDamage = 1%
+			NDamage = &<./Data/statuses/fire/fire.rules>/DAMAGE_PER_TICK
+		}
+	}
+}
+DeathMediaEffects = &/COMMON_EFFECTS/MedPartDestroyed
+NuggetSprite
+{
+	File = "cloudy_gas.png"
+	NormalsFile = "cloudy_gas_normals.png"
+	Size = [1, 1]
+	Offset = [.25+4/64, 0]
+	UVRotation = 1
+}
+
+StackSprites
+[
+	{
+		File = "cloudy_gas_stack_1.png"
+		Size = [1, 1]
+	}
+	{
+		File = "cloudy_gas_stack_2.png"
+		Size = [1, 1]
+	}
+	{
+		File = "cloudy_gas_stack_3.png"
+		Size = [1, 1]
+	}
+	{
+		File = "cloudy_gas_stack_4.png"
+		Size = [1, 1]
+	}
+	{
+		File = "cloudy_gas_stack_5.png"
+		Size = [1, 1]
+	}
+]
+
+StackReceiveMediaEffects = &/COMMON_EFFECTS/EnrichedUraniumDeliver
+StackPickupMediaEffects = &/COMMON_EFFECTS/EnrichedUraniumPickup
+NuggetPickupMediaEffects = &/COMMON_EFFECTS/NuggetPickup

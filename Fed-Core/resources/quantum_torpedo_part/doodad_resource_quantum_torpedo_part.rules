@@ -1,0 +1,13 @@
+ID = stafa.resource_quantum_torpedo_part
+Type = Resource
+DescriptionKey = "Resource/QuantumTorpedoPart"
+CategoryKey = "Doodads/QuantumResources"
+Icon
+{
+	Texture
+	{
+		File = "quantum_torpedo_part.png"
+		MipLevels = 2
+	}
+}
+ResourceType = quantum_torpedo_part

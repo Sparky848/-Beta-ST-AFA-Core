@@ -1,0 +1,141 @@
+ID = quantum_torpedo_part
+NameKey = "Resource/QuantumTorpedoPart"
+PluralNameKey = "Resource/QuantumTorpedoPartPlural"
+DescriptionKey = "Resource/QuantumTorpedoPartDesc"
+BuyPrice = 90	
+SellPrice = (&BuyPrice) / 10
+MaxPerNugget = 1
+MaxStackSize = 10
+FlexGridPriorityKey = "flex_grid_stafa_quantum_torpedo_part"
+FlexGridDefaultPriority = 1
+DropRates = &<./Data/resources/resources.rules>/AmmoDropRates
+
+Icon
+{
+	Texture
+	{
+		File = "icon.png"
+		MipLevels = max
+	}
+	Size = [64, 64]
+}
+
+Overlay
+{
+	Texture
+	{
+		File = "overlay.png"
+		SampleMode = Linear
+		MipLevels = max
+	}
+	Size = [1, 1]
+}
+
+DeathHitEffects // Scaled with stack size.
+[
+	{
+		Type = ExplosiveDamage
+		TotalDamage = 5000
+		Radius = 12
+		Delay = .05
+		StatusType = cosmoteer.fire
+		StatusChancePerNDamage = 50%
+		StatusValue = 1
+		StatusValueType = Interpolated
+		NDamage = 1000
+		CrewKillChance = 10%
+		Filter
+		{
+			OperationalHealth = true
+			StructuralHealth = false
+			Friendlies = true
+		}
+	}
+	{
+		Type = ExplosiveDamage
+		TotalDamage = 5000
+		Radius = 6
+		Delay = .05
+		Filter
+		{
+			OperationalHealth = false
+			StructuralHealth = true
+			Friendlies = true
+			Crew = false
+		}
+	}
+]
+HitResponse
+{
+	HitEffects = &~/DeathHitEffects
+	MediaEffects = &~/DeathMediaEffects
+	Chance = 0
+	ChancePerNDamage = 0
+	RequireDirectHit = true
+	DamageTypeOverrides
+	{
+		fire
+		{
+			ChancePerNDamage = 2.5%
+			NDamage = &<./Data/statuses/fire/fire.rules>/DAMAGE_PER_TICK
+		}
+	}
+}
+DeathMediaEffects = &/COMMON_EFFECTS/MedPartDestroyed
+
+NuggetSprite
+{
+	File = "quantum_torpedo_part.png"
+	NormalsFile = "quantum_torpedo_part_normals.png"
+	Size = [1, 1]
+	Offset = [.25, 0]
+	UVRotation = 1
+}
+
+StackSprites
+[
+	{
+		File = "stack_1.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_2.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_3.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_4.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_5.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_6.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_7.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_8.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_9.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_10.png"
+		Size = [1, 1]
+	}
+]
+
+StackReceiveMediaEffects = &/COMMON_EFFECTS/PartDeliver
+StackPickupMediaEffects = &/COMMON_EFFECTS/PartPickup
+NuggetPickupMediaEffects = &/COMMON_EFFECTS/NuggetPickup

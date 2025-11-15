@@ -1,0 +1,903 @@
+Part : <./Data/ships/terran/base_part_terran.rules>/Part
+{
+	NameKey = "Parts/GasFabricator3x1"
+	IconNameKey = "Parts/GasFabricator3x1Icon"
+	ID = stafa.gasfabricator3x1 // Part IDs must always be in the form of "author_name.part_name". If making your own mod, do *not* use "cosmoteer" as your author name, because it may conflict with future vanilla parts.
+	EditorGroup = "StarfleetProduction"
+	DescriptionKey = "Parts/GasFabricator3x1Desc"
+	Resources
+	[
+		[steel, 78]
+		[coil, 27]
+		[tristeel, 6]
+	]
+	Size = [3, 1]
+	SelectionPriority = 1
+	MaxHealth = 2500
+	TypeCategories = [gas_fabricator, uses_power]
+	ReceivableBuffs : ^/0/ReceivableBuffs [HasBussard3, ElectronNebula, CloudyNebula, IonNebula]
+	AllowedDoorLocations
+	[
+		[-1, 0]
+		[0, 1]
+		[2, 1]
+		[3, 0]
+	]
+	EditorIcon
+	{
+		Texture
+		{
+			File = "icon.png"
+			SampleMode = Linear
+		}
+		Size = [48, 16]
+	}
+	Components : ^/0/Components
+	{
+		IsOperational
+		{
+			Type = MultiToggle
+			Toggles = [PowerToggle, BatteryStorage, IsConnected, PartCrew]
+			Mode = All
+		}
+		IsConnected
+		{
+			Type = BuffToggle
+			BuffType = HasBussard3
+		}
+		InCloudyNebula
+		{
+			Type = BuffToggle
+			BuffType = CloudyNebula
+		}
+		InElectronNebula
+		{
+			Type = BuffToggle
+			BuffType = ElectronNebula
+		}
+		InIonNebula
+		{
+			Type = BuffToggle
+			BuffType = IonNebula
+		}
+		PowerToggle
+		{
+			Type = UIToggle
+			ToggleID = "on_off"
+			Default = 1
+			RequiresCommand = false
+		}
+
+		CommandConsumer
+		{
+			Type = CommandConsumer
+			OperationalToggle = PowerToggle
+			CommandPoints = 4
+		}
+
+		ConversionTimerCloudy
+		{
+			Type = Timer
+			OperationalToggle = InCloudyNebula
+			Duration = 9
+			AutoStart = true
+			Repeats = true
+		}
+		ConversionTimerElectron
+		{
+			Type = Timer
+			OperationalToggle = InElectronNebula
+			Duration = 11
+			AutoStart = true
+			Repeats = true
+		}
+		ConversionTimerIon
+		{
+			Type = Timer
+			OperationalToggle = InIonNebula
+			Duration = 15
+			AutoStart = true
+			Repeats = true
+		}
+		CloudyGasProducer
+		{
+			Type = TriggeredResourceConverter
+			OperationalToggle = InCloudyNebula
+			Trigger = ConversionTimerCloudy
+			FromStorage = BatteryStorage
+			ToStorage = CloudyGasStorage
+			FromQuantity = 4000
+			ToQuantity = 4
+			//Delay = 5
+			CheckResourceLimits = true
+			OnlyUpdateToggleOnTrigger = true
+		}
+		CloudyGasStorage
+		{
+			Type = ResourceStorage
+			ResourceType = cloudy_gas
+			MaxResources = 12
+			StartingResources = 0
+			SuppliesResources = true
+			SuppliesResourcesToggle = IsOperational
+			MinResourcesPickUp = 1
+			MaxResourcesPickUp = 1
+			InitPickUp = 1
+			PickUpRate = 0.1
+			ToggleOnResources = 1
+			ToggleOffResources = 0
+		}
+		ElectronGasProducer
+		{
+			Type = TriggeredResourceConverter
+			OperationalToggle = InElectronNebula
+			Trigger = ConversionTimerElectron
+			FromStorage = BatteryStorage
+			ToStorage = ElectronGasStorage
+			FromQuantity = 4000
+			ToQuantity = 4
+			//Delay = 7.5
+			CheckResourceLimits = true
+			OnlyUpdateToggleOnTrigger = true
+		}
+		ElectronGasStorage
+		{
+			Type = ResourceStorage
+			ResourceType = electron_gas
+			MaxResources = 12
+			StartingResources = 0
+			SuppliesResources = true
+			SuppliesResourcesToggle = IsOperational
+			MinResourcesPickUp = 1
+			MaxResourcesPickUp = 1
+			InitPickUp = 1
+			PickUpRate = 0.1
+			ToggleOnResources = 1
+			ToggleOffResources = 0
+		}
+		IonGasProducer
+		{
+			Type = TriggeredResourceConverter
+			OperationalToggle = InIonNebula
+			Trigger = ConversionTimerIon
+			FromStorage = BatteryStorage
+			ToStorage = IonGasStorage
+			FromQuantity = 5000
+			ToQuantity = 4
+			//Delay = 7.5
+			CheckResourceLimits = true
+			OnlyUpdateToggleOnTrigger = true
+		}
+		IonGasStorage
+		{
+			Type = ResourceStorage
+			ResourceType = ion_gas
+			MaxResources = 12
+			StartingResources = 0
+			SuppliesResources = true
+			SuppliesResourcesToggle = IsOperational
+			MinResourcesPickUp = 1
+			MaxResourcesPickUp = 1
+			InitPickUp = 1
+			PickUpRate = 0.1
+			ToggleOnResources = 1
+			ToggleOffResources = 0
+		}
+		BatteryStorage
+		{
+			Type = ResourceStorage
+			ResourceType = battery
+			MaxResources = 10000
+			ReceiveResourceMediaEffects = &/COMMON_EFFECTS/PowerDeliver
+		}
+		BatteryConsumer
+		{
+			Type = ResourceConsumer
+			ResourceType = battery
+			Storage = BatteryStorage
+			DefaultPriority = &/PRIORITIES/Factory_Supply
+			ResupplyThreshold = 500
+			OperationalToggle = PowerToggle
+		}
+		InternalBatteryCapacity
+		{
+			Type = ProgressBar
+			OperationalToggle = IsOperational
+			ShowProgressFor = BatteryStorage
+			Invert = false
+			LowColor = [170, 183, 0]
+			HighColor = [238, 255, 0]
+			FullColor = [238, 255, 0]
+			Height = 5
+		}
+		
+		InternalCloudyGasCapacity
+		{
+			Type = ProgressBar
+			OperationalToggle = IsOperational
+			ShowProgressFor = CloudyGasStorage
+			Invert = false
+			LowColor = [115, 137, 155]
+			HighColor = [187, 224, 255]
+			FullColor = [187, 224, 255]
+			Height = 7
+		}
+		InternalElectronGasCapacity
+		{
+			Type = ProgressBar
+			OperationalToggle = IsOperational
+			ShowProgressFor = ElectronGasStorage
+			Invert = false
+			LowColor = [105, 147, 45]
+			HighColor = [180, 155, 77]
+			FullColor = [180, 155, 77]
+			Height = 7
+		}
+		InternalIonGasCapacity
+		{
+			Type = ProgressBar
+			OperationalToggle = IsOperational
+			ShowProgressFor = IonGasStorage
+			Invert = false
+			LowColor = [99, 1, 0]
+			HighColor = [255, 4, 0]
+			FullColor = [255, 4, 0]
+			Height = 7
+		}
+		GasProducerToggle
+		{
+			Type = MultiToggle
+			Toggles = [CloudyGasProducer, ElectronGasProducer, IonGasProducer]
+			Mode = Any
+			Invert = false
+		}
+
+		Graphics
+		{
+			Type = Graphics
+			Location = [1.5, .5]
+			OperationalToggle = IsOperational
+			DoodadToggle = GasProducerToggle
+			Floor
+			{
+				Layer = "floors"
+				DamageLevels
+				[
+					{
+						File = "floor.png"
+						Size = [3, 1]
+					}
+					{
+						File = "floor_33.png"
+						Size = [3, 1]
+					}
+					{
+						File = "floor_66.png"
+						Size = [3, 1]
+					}
+				]
+			}
+			ToggleOnDoodad
+			{
+				Layer = "doors"
+				//Offset = [0, -0.25]
+				DamageLevels
+				[
+					{
+						AnimationFiles
+						[
+							//"fab_energycover_1.png"
+							"fab_energycover_2.png"
+							"fab_energycover_3.png"
+							"fab_energycover_4.png"
+							"fab_energycover_5.png"
+							"fab_energycover_6.png"
+							"fab_energycover_7.png"
+							"fab_energycover_8.png"
+							"fab_energycover_9.png"
+							"fab_energycover_10.png"
+							"fab_energycover_11.png"
+							"fab_energycover_12.png"
+							"fab_energycover_13.png"
+							"fab_energycover_14.png"
+							"fab_energycover_15.png"
+							"fab_energycover_16.png"
+							"fab_energycover_17.png"
+							"fab_energycover_18.png"
+							"fab_energycover_19.png"
+						]
+						Size = [3, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+					{
+						AnimationFiles
+						[
+							//"fab_energycover_1.png"
+							"fab_energycover_2.png"
+							"fab_energycover_3.png"
+							"fab_energycover_4.png"
+							"fab_energycover_5.png"
+							"fab_energycover_6.png"
+							"fab_energycover_7.png"
+							"fab_energycover_8.png"
+							"fab_energycover_9.png"
+							"fab_energycover_10.png"
+							"fab_energycover_11.png"
+							"fab_energycover_12.png"
+							"fab_energycover_13.png"
+							"fab_energycover_14.png"
+							"fab_energycover_15.png"
+							"fab_energycover_16.png"
+							"fab_energycover_17.png"
+							"fab_energycover_18.png"
+							"fab_energycover_19.png"
+						]
+						Size = [3, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+					{
+						AnimationFiles
+						[
+							//"fab_energycover_1.png"
+							"fab_energycover_2.png"
+							"fab_energycover_3.png"
+							"fab_energycover_4.png"
+							"fab_energycover_5.png"
+							"fab_energycover_6.png"
+							"fab_energycover_7.png"
+							"fab_energycover_8.png"
+							"fab_energycover_9.png"
+							"fab_energycover_10.png"
+							"fab_energycover_11.png"
+							"fab_energycover_12.png"
+							"fab_energycover_13.png"
+							"fab_energycover_14.png"
+							"fab_energycover_15.png"
+							"fab_energycover_16.png"
+							"fab_energycover_17.png"
+							"fab_energycover_18.png"
+							"fab_energycover_19.png"
+						]
+						Size = [3, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+				]
+			}
+			Walls
+			{
+				Layer = "walls"
+				DamageLevels
+				[
+					{
+						File = "walls.png"
+						Size = [3, 1]
+					}
+					{
+						File = "walls_33.png"
+						Size = [3, 1]
+					}
+					{
+						File = "walls_66.png"
+						Size = [3, 1]
+					}
+				]
+			}
+			Roof
+			{
+				Layer = "roofs"
+				DamageLevels
+				[
+					{
+						File = "roof.png"
+						NormalsFile = "roof_normals.png"
+						Size = [3, 1]
+					}
+					{
+						File = "roof_33.png"
+						NormalsFile = "roof_normals_33.png"
+						Size = [3, 1]
+					}
+					{
+						File = "roof_66.png"
+						NormalsFile = "roof_normals_66.png"
+						Size = [3, 1]
+					}
+				]
+			}
+			OperationalRoofDoodad
+			{
+				Layer = "roof_turrets"
+				//Offset = [0, 1]
+				DamageLevels
+				[
+					{
+						AnimationFiles
+						[
+							"roof_doodads_1.png"
+							"roof_doodads_2.png"
+							"roof_doodads_3.png"
+							"roof_doodads_4.png"
+							"roof_doodads_5.png"
+							"roof_doodads_6.png"
+							"roof_doodads_7.png"
+							"roof_doodads_8.png"
+						]
+						Size = [3, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+					{
+						AnimationFiles
+						[
+							"roof_doodads_1.png"
+							"roof_doodads_2.png"
+							"roof_doodads_3.png"
+							"roof_doodads_4.png"
+							"roof_doodads_5.png"
+							"roof_doodads_6.png"
+							"roof_doodads_7.png"
+							"roof_doodads_8.png"
+						]
+						Size = [3, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+					{
+						AnimationFiles
+						[
+							"roof_doodads_1.png"
+							"roof_doodads_2.png"
+							"roof_doodads_3.png"
+							"roof_doodads_4.png"
+							"roof_doodads_5.png"
+							"roof_doodads_6.png"
+							"roof_doodads_7.png"
+							"roof_doodads_8.png"
+						]
+						Size = [3, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+				]
+			}
+			OperationalRoofLighting
+			{
+				Layer = "roof_lights_fancy"
+				//Offset = [0, -29/64]
+				DamageLevels
+				[
+					{
+						File = "./Data/ships/common/light_blob.png"
+						Size = [2, 2]
+						Z = 0.5 // Controls the "height" of the light for the purposes of normal mapping. Set to -1 (or any negative number) to disable normal lighting for this light.
+						VertexColor = [44,86,255]
+					}
+				]
+			}
+		}
+		CloudyToggled
+		{
+			Type = ToggledComponents
+			Toggle = InCloudyNebula
+			Components
+			{
+				CloudyGraphics
+				{
+					Type = Graphics
+					Location = [1.5, .5]
+					OperationalToggle = IsOperational
+					DoodadToggle = GasProducerToggle
+					ResetAnimationTrigger = ConversionTimerCloudy
+					ToggleOnDoodad
+					{
+						Layer = "doors"
+						//Offset = [0, -0.25]
+						DamageLevels
+						[
+							{
+								AnimationFiles
+								[
+									"cloudy/fabricator_blue_1.png"
+									"cloudy/fabricator_blue_2.png"
+									"cloudy/fabricator_blue_3.png"
+									"cloudy/fabricator_blue_4.png"
+									"cloudy/fabricator_blue_5.png"
+									"cloudy/fabricator_blue_6.png"
+									"cloudy/fabricator_blue_7.png"
+									"cloudy/fabricator_blue_8.png"
+									"cloudy/fabricator_blue_9.png"
+									"cloudy/fabricator_blue_10.png"
+									"cloudy/fabricator_blue_11.png"
+									"cloudy/fabricator_blue_12.png"
+									"cloudy/fabricator_blue_13.png"
+									"cloudy/fabricator_blue_14.png"
+									"cloudy/fabricator_blue_15.png"
+									"cloudy/fabricator_blue_16.png"
+									"cloudy/fabricator_blue_17.png"
+									"cloudy/fabricator_blue_18.png"
+									"cloudy/fabricator_blue_19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+							{
+								AnimationFiles
+								[
+									"cloudy/fabricator_blue_2.png"
+									"cloudy/fabricator_blue_3.png"
+									"cloudy/fabricator_blue_4.png"
+									"cloudy/fabricator_blue_5.png"
+									"cloudy/fabricator_blue_6.png"
+									"cloudy/fabricator_blue_7.png"
+									"cloudy/fabricator_blue_8.png"
+									"cloudy/fabricator_blue_9.png"
+									"cloudy/fabricator_blue_10.png"
+									"cloudy/fabricator_blue_11.png"
+									"cloudy/fabricator_blue_12.png"
+									"cloudy/fabricator_blue_13.png"
+									"cloudy/fabricator_blue_14.png"
+									"cloudy/fabricator_blue_15.png"
+									"cloudy/fabricator_blue_16.png"
+									"cloudy/fabricator_blue_17.png"
+									"cloudy/fabricator_blue_18.png"
+									"cloudy/fabricator_blue_19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+							{
+								AnimationFiles
+								[
+									"cloudy/fabricator_blue_2.png"
+									"cloudy/fabricator_blue_3.png"
+									"cloudy/fabricator_blue_4.png"
+									"cloudy/fabricator_blue_5.png"
+									"cloudy/fabricator_blue_6.png"
+									"cloudy/fabricator_blue_7.png"
+									"cloudy/fabricator_blue_8.png"
+									"cloudy/fabricator_blue_9.png"
+									"cloudy/fabricator_blue_10.png"
+									"cloudy/fabricator_blue_11.png"
+									"cloudy/fabricator_blue_12.png"
+									"cloudy/fabricator_blue_13.png"
+									"cloudy/fabricator_blue_14.png"
+									"cloudy/fabricator_blue_15.png"
+									"cloudy/fabricator_blue_16.png"
+									"cloudy/fabricator_blue_17.png"
+									"cloudy/fabricator_blue_18.png"
+									"cloudy/fabricator_blue_19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+						]
+					}
+				}
+			}
+		}
+		ElectronToggled
+		{
+			Type = ToggledComponents
+			Toggle = InElectronNebula
+			Components
+			{
+				ElectronGraphics
+				{
+					Type = Graphics
+					Location = [1.5, .5]
+					OperationalToggle = IsOperational
+					DoodadToggle = GasProducerToggle
+					ResetAnimationTrigger = ConversionTimerElectron
+					ToggleOnDoodad
+					{
+						Layer = "doors"
+						//Offset = [0, -0.25]
+						DamageLevels
+						[
+							{
+								AnimationFiles
+								[
+									"electron/fabricator_yellow_1.png"
+									"electron/fabricator_yellow_2.png"
+									"electron/fabricator_yellow_3.png"
+									"electron/fabricator_yellow_4.png"
+									"electron/fabricator_yellow_5.png"
+									"electron/fabricator_yellow_6.png"
+									"electron/fabricator_yellow_7.png"
+									"electron/fabricator_yellow_8.png"
+									"electron/fabricator_yellow_9.png"
+									"electron/fabricator_yellow_10.png"
+									"electron/fabricator_yellow_11.png"
+									"electron/fabricator_yellow_12.png"
+									"electron/fabricator_yellow_13.png"
+									"electron/fabricator_yellow_14.png"
+									"electron/fabricator_yellow_15.png"
+									"electron/fabricator_yellow_16.png"
+									"electron/fabricator_yellow_17.png"
+									"electron/fabricator_yellow_18.png"
+									"electron/fabricator_yellow_19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+							{
+								AnimationFiles
+								[
+									"electron/fabricator_yellow_2.png"
+									"electron/fabricator_yellow_3.png"
+									"electron/fabricator_yellow_4.png"
+									"electron/fabricator_yellow_5.png"
+									"electron/fabricator_yellow_6.png"
+									"electron/fabricator_yellow_7.png"
+									"electron/fabricator_yellow_8.png"
+									"electron/fabricator_yellow_9.png"
+									"electron/fabricator_yellow_10.png"
+									"electron/fabricator_yellow_11.png"
+									"electron/fabricator_yellow_12.png"
+									"electron/fabricator_yellow_13.png"
+									"electron/fabricator_yellow_14.png"
+									"electron/fabricator_yellow_15.png"
+									"electron/fabricator_yellow_16.png"
+									"electron/fabricator_yellow_17.png"
+									"electron/fabricator_yellow_18.png"
+									"electron/fabricator_yellow_19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+							{
+								AnimationFiles
+								[
+									"electron/fabricator_yellow_2.png"
+									"electron/fabricator_yellow_3.png"
+									"electron/fabricator_yellow_4.png"
+									"electron/fabricator_yellow_5.png"
+									"electron/fabricator_yellow_6.png"
+									"electron/fabricator_yellow_7.png"
+									"electron/fabricator_yellow_8.png"
+									"electron/fabricator_yellow_9.png"
+									"electron/fabricator_yellow_10.png"
+									"electron/fabricator_yellow_11.png"
+									"electron/fabricator_yellow_12.png"
+									"electron/fabricator_yellow_13.png"
+									"electron/fabricator_yellow_14.png"
+									"electron/fabricator_yellow_15.png"
+									"electron/fabricator_yellow_16.png"
+									"electron/fabricator_yellow_17.png"
+									"electron/fabricator_yellow_18.png"
+									"electron/fabricator_yellow_19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+						]
+					}
+				}
+			}
+		}
+		IonToggled
+		{
+			Type = ToggledComponents
+			Toggle = InIonNebula
+			Components
+			{
+				IonGraphics
+				{
+					Type = Graphics
+					Location = [1.5, .5]
+					OperationalToggle = IsOperational
+					DoodadToggle = GasProducerToggle
+					ResetAnimationTrigger = ConversionTimerIon
+					ToggleOnDoodad
+					{
+						Layer = "doors"
+						//Offset = [0, -0.25]
+						DamageLevels
+						[
+							{
+								AnimationFiles
+								[
+									"ion/fabricator_red1.png"
+									"ion/fabricator_red2.png"
+									"ion/fabricator_red3.png"
+									"ion/fabricator_red4.png"
+									"ion/fabricator_red5.png"
+									"ion/fabricator_red6.png"
+									"ion/fabricator_red7.png"
+									"ion/fabricator_red8.png"
+									"ion/fabricator_red9.png"
+									"ion/fabricator_red10.png"
+									"ion/fabricator_red11.png"
+									"ion/fabricator_red12.png"
+									"ion/fabricator_red13.png"
+									"ion/fabricator_red14.png"
+									"ion/fabricator_red15.png"
+									"ion/fabricator_red16.png"
+									"ion/fabricator_red17.png"
+									"ion/fabricator_red18.png"
+									"ion/fabricator_red19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+							{
+								AnimationFiles
+								[
+									"ion/fabricator_red2.png"
+									"ion/fabricator_red3.png"
+									"ion/fabricator_red4.png"
+									"ion/fabricator_red5.png"
+									"ion/fabricator_red6.png"
+									"ion/fabricator_red7.png"
+									"ion/fabricator_red8.png"
+									"ion/fabricator_red9.png"
+									"ion/fabricator_red10.png"
+									"ion/fabricator_red11.png"
+									"ion/fabricator_red12.png"
+									"ion/fabricator_red13.png"
+									"ion/fabricator_red14.png"
+									"ion/fabricator_red15.png"
+									"ion/fabricator_red16.png"
+									"ion/fabricator_red17.png"
+									"ion/fabricator_red18.png"
+									"ion/fabricator_red19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+							{
+								AnimationFiles
+								[
+									"ion/fabricator_red2.png"
+									"ion/fabricator_red3.png"
+									"ion/fabricator_red4.png"
+									"ion/fabricator_red5.png"
+									"ion/fabricator_red6.png"
+									"ion/fabricator_red7.png"
+									"ion/fabricator_red8.png"
+									"ion/fabricator_red9.png"
+									"ion/fabricator_red10.png"
+									"ion/fabricator_red11.png"
+									"ion/fabricator_red12.png"
+									"ion/fabricator_red13.png"
+									"ion/fabricator_red14.png"
+									"ion/fabricator_red15.png"
+									"ion/fabricator_red16.png"
+									"ion/fabricator_red17.png"
+									"ion/fabricator_red18.png"
+									"ion/fabricator_red19.png"
+									"fab_energycover_19.png"
+								]
+								Size = [3, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+						]
+					}
+				}
+			}
+		}
+		OperationEffects
+		{
+			Type = ToggleEffects
+			Location = [1.5, .5]
+			Toggle = IsOperational
+			ToggledOnMediaEffects = &/COMMON_EFFECTS/MachinesOn
+			ToggledOffMediaEffects = &/COMMON_EFFECTS/MachinesOff
+		}
+
+		DestroyedEffects
+		{
+			Type = DeathEffects
+			MediaEffects = &/COMMON_EFFECTS/MedPartDestroyed
+			Location = [1.5, .5]
+		}
+
+		Indicators
+		{
+			Type = IndicatorSprites
+			Location = [1.5, .5]
+			Layer = "indicators"
+			Indicators
+			[
+				// Turned off.
+				{
+					Toggle = PowerToggle
+					AtlasSprite
+					{
+						File = &/INDICATORS/PowerOff
+						Size = [1, 1]
+					}
+				}
+
+
+				// Out of power.
+				{
+					Toggle = BatteryStorage
+					AtlasSprite
+					{
+						File = &/INDICATORS/NoPower
+						Size = [1, 1]
+					}
+				}
+			]
+		}
+		CrewLocation
+		{
+			Type = CrewLocation
+			Location = [.75, .5]
+			Rotation = 0d
+		}
+		CrewLocation2
+		{
+			Type = CrewLocation
+			Location = [1.75, .5]
+			Rotation = 0d
+		}
+		PartCrew
+		{
+			Type = PartCrew
+			Crew = 2
+			DefaultPriority = &/PRIORITIES/Weapon_Crew
+			PrerequisitesBeforeCrewing = [PowerToggle]
+			CrewDestinations
+			[
+				&../../CrewLocation/Location
+			]
+			CrewLocations
+			[
+				CrewLocation
+				CrewLocation2
+			]
+		}
+		Blueprints
+		{
+			Type = BlueprintSprite
+			File = "blueprints.png"
+			Size = [3, 1]
+		}
+	}
+
+	Stats
+	{
+		//PowerPerSecond = (&~/Part/Components/ResourceConverter/From/1/Quantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue) / 1000
+		PowerCapacity = (&~/Part/Components/BatteryStorage/MaxResources) / 1000
+
+		//RecPower = &PowerPerSecond
+		//RecCrew = (&RecPower) * 4
+	}
+}

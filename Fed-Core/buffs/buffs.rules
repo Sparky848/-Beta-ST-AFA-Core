@@ -85,3 +85,13 @@ PhaserReverseOperation
 	RectBorderColor = [10, 212, 98, 160]
 	RectFillColor = [10, 212, 98, 64]
 }
+CloudyNebula
+{
+	CombineMode = Max
+	BaseValue = 0%
+}
+IonNebula
+{
+	CombineMode = Max
+	BaseValue = 0%
+}

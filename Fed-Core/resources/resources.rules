@@ -4,4 +4,8 @@ Resources
 	&<torpedo_part/torpedo_part.rules>
 	&<dilithium/dilithium.rules>
 	&<transphasic_torpedo_part/transphasic_torpedo_part.rules>
+	&<cloudy_gas/cloudy_gas.rules>
+	&<electron_gas/electron_gas.rules>
+	&<ion_gas/ion_gas.rules>
+	&<quantum_torpedo_part/quantum_torpedo_part.rules>
 ]
