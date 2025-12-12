@@ -33,7 +33,8 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		Size = [32, 16]
 	}
 	Components : ^/0/Components
-	{
+	{	
+
 		IsOperational
 		{
 			Type = MultiToggle
@@ -79,7 +80,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		{
 			Type = Timer
 			OperationalToggle = InCloudyNebula
-			Duration = 7
+			Duration = 9//7
 			AutoStart = true
 			Repeats = true
 		}
@@ -87,7 +88,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		{
 			Type = Timer
 			OperationalToggle = InElectronNebula
-			Duration = 9
+			Duration = 12//9
 			AutoStart = true
 			Repeats = true
 		}
@@ -95,7 +96,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		{
 			Type = Timer
 			OperationalToggle = InIonNebula
-			Duration = 12
+			Duration = 20//12
 			AutoStart = true
 			Repeats = true
 		}
@@ -484,6 +485,102 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				]
 			}
 		}
+		OSDGraphics
+		{
+			Type = Graphics
+			Toggle = IsOperational
+			OperationalDoodad
+			{
+				Layer = "doodads_high"
+				DamageLevels
+				[
+					{
+						AnimationFiles
+						[
+							"floor_osd_1.png"
+							"floor_osd_2.png"
+							"floor_osd_3.png"
+							"floor_osd_4.png"
+							"floor_osd_5.png"
+							"floor_osd_6.png"
+							"floor_osd_7.png"
+							"floor_osd_8.png"
+							"floor_osd_9.png"
+							"floor_osd_10.png"
+							"floor_osd_11.png"
+							"floor_osd_12.png"
+							"floor_osd_13.png"
+							"floor_osd_14.png"
+							"floor_osd_15.png"
+							"floor_osd_16.png"
+							"floor_osd_17.png"
+							"floor_osd_18.png"
+							"floor_osd_19.png"
+						]
+						Size = [2, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+					{
+						AnimationFiles
+						[
+							"floor_osd_1.png"
+							"floor_osd_2.png"
+							"floor_osd_3.png"
+							"floor_osd_4.png"
+							"floor_osd_5.png"
+							"floor_osd_6.png"
+							"floor_osd_7.png"
+							"floor_osd_8.png"
+							"floor_osd_9.png"
+							"floor_osd_10.png"
+							"floor_osd_11.png"
+							"floor_osd_12.png"
+							"floor_osd_13.png"
+							"floor_osd_14.png"
+							"floor_osd_15.png"
+							"floor_osd_16.png"
+							"floor_osd_17.png"
+							"floor_osd_18.png"
+							"floor_osd_19.png"
+						]
+						Size = [2, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+					{
+						AnimationFiles
+						[
+							"floor_osd_1.png"
+							"floor_osd_2.png"
+							"floor_osd_3.png"
+							"floor_osd_4.png"
+							"floor_osd_5.png"
+							"floor_osd_6.png"
+							"floor_osd_7.png"
+							"floor_osd_8.png"
+							"floor_osd_9.png"
+							"floor_osd_10.png"
+							"floor_osd_11.png"
+							"floor_osd_12.png"
+							"floor_osd_13.png"
+							"floor_osd_14.png"
+							"floor_osd_15.png"
+							"floor_osd_16.png"
+							"floor_osd_17.png"
+							"floor_osd_18.png"
+							"floor_osd_19.png"
+						]
+						Size = [2, 1]
+						AnimationInterval = 0.1
+						AnimationStartTime = WhenSpawned
+						ClampAnimation = true
+					}
+				]
+			}
+		}
 		CloudyToggled
 		{
 			Type = ToggledComponents
@@ -859,13 +956,13 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		CrewLocation
 		{
 			Type = CrewLocation
-			Location = [.75, .5]
+			Location = [.7, .5]
 			Rotation = 0d
 		}
 		CrewLocation2
 		{
 			Type = CrewLocation
-			Location = [1.25, .5]
+			Location = [1.3, .5]
 			Rotation = 0d
 		}
 		PartCrew

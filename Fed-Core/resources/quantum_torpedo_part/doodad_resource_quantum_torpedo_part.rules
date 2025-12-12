@@ -1,7 +1,7 @@
 ID = stafa.resource_quantum_torpedo_part
 Type = Resource
 DescriptionKey = "Resource/QuantumTorpedoPart"
-CategoryKey = "Doodads/QuantumResources"
+CategoryKey = "Doodads/Resources"
 Icon
 {
 	Texture

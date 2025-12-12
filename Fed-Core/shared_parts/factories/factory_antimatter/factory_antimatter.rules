@@ -572,14 +572,14 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	Stats
 	{
 		AntimatterProduction = Infinity //(&~/Part/Components/ResourceConverter/ToQuantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
-		AntimatterCapacity = (&~/Part/Components/AntimatterStorage/GridRect/2) * (&~/Part/Components/AntimatterStorage/GridRect/3) * (&<../../../resources/antimatter/antimatter.rules>/MaxStackSize)
+		AntimatterCapacity = 1
 		HyperiumCapacity = &~/Part/Components/HyperiumStorage/MaxResources
 		HyperiumPerAntimatter = (&~/Part/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/ResourceConverter/ToQuantity)
 		HyperiumPerSecond = Infinity //(&~/Part/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
-		DiamondCarbonUsage = [&../HyperiumPerAntimatter, &../HyperiumPerSecond]
+		//DiamondCarbonUsage = [&../HyperiumPerAntimatter, &../HyperiumPerSecond]
 		PowerPerAntimatter = (&~/Part/Components/ResourceConverter/From/1/Quantity) / (&~/Part/Components/ResourceConverter/ToQuantity) / 1000
 		PowerPerSecond = Infinity //(&~/Part/Components/ResourceConverter/From/1/Quantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue) / 1000
-		DiamondPowerUsage = [&../PowerPerAntimatter, &../PowerPerSecond]
+		//DiamondPowerUsage = [&../PowerPerAntimatter, &../PowerPerSecond]
 		PowerCapacity = (&~/Part/Components/BatteryStorage/MaxResources) / 1000
 		FactoryBuff = (&~/Part/Components/BuffProvider/BuffAmount) * 100
 

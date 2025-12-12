@@ -1,13 +1,13 @@
-ID = stafa.resource_electron_gas
+ID = stafa.resource_ion_gas
 Type = Resource
-DescriptionKey = "Resource/ElectronGas"
+DescriptionKey = "Resource/IonGas"
 CategoryKey = "Doodads/Resources"
 Icon
 {
 	Texture
 	{
-		File = "electron_gas.png"
+		File = "ion_gas.png"
 		MipLevels = 2
 	}
 }
-ResourceType = electron_gas
+ResourceType = ion_gas
