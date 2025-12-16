@@ -36,6 +36,21 @@ PartToggles
 					}
 				}
 			}
+
+			// Tricobalt Torpedo.
+			{
+				ChoiceID = "torpedo_production_type_tricobalt"
+				ButtonToolTipKey = "PartToggles/TorpedoProductionType_Tricobalt"
+				ButtonSprite
+				{
+					Texture
+					{
+						File = "../../../resources/tricobalt_torpedo_part/overlay.png"
+						MipLevels = 2
+						SampleMode = Linear
+					}
+				}
+			}
 		]
 	}
 ]

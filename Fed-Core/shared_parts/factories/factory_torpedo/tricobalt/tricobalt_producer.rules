@@ -6,22 +6,22 @@ ResourceConverter
 	[
 		{
 			Storage = AntimatterSplitter
-			Quantity = 4//2
+			Quantity = 6
 		}
 		{
 			Storage = BatteryStorage
-			Quantity = 250
+			Quantity = 500
 			MinQuantityForConversion = 1
 		}
 	]
-	ToStorage = QuantumTorpedoPartStorage
+	ToStorage = TricobaltTorpedoPartStorage
 	ToQuantity = 1
-	Interval = { BaseValue=.5; BuffType=Factory; BuffMode=Divide; }//one antimatter and 5 batteries lasts 10 seconds and nets 20 parts
+	Interval = { BaseValue=.75; BuffType=Factory; BuffMode=Divide; }//one antimatter and 6.5 batteries lasts 9.75 seconds and nets 13.3333... parts
 }
-QuantumTorpedoPartStorage
+TricobaltTorpedoPartStorage
 {
 	Type = TypedResourceGrid
-	ResourceType = quantum_torpedo_part
+	ResourceType = tricobalt_torpedo_part
 	GridRect = [0, 2, 2, 1]
 	Layer = "doodads_low"
 	SpriteInset = [8/64, 3/64, 8/64, 12/64]

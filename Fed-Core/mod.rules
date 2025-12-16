@@ -1,7 +1,7 @@
 ID = "st-afa.beta_coremod"
 Name = "[Beta] ST-AFA - Core"
-Version = "[Beta] 0.3.3"
-CompatibleGameVersions = ["0.30.1"]
+Version = "[Beta] 0.3.4"
+CompatibleGameVersions = ["0.30.3a"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
 Logo = logo.png
@@ -426,6 +426,8 @@ Actions
 			{ ResourceType=antimatter;              RandomWeight=19;  RandomQuantity=[50%, 100%]; }
 			{ ResourceType=dilithium;           	RandomWeight=2;  RandomQuantity=[20%, 40%]; }
 			{ ResourceType=torpedo_part;   			RandomWeight=20;  RandomQuantity=[75%, 100%]; }
+			{ ResourceType=quantum_torpedo_part;   			RandomWeight=15;  RandomQuantity=[50%, 75%]; }
+			{ ResourceType=tricobalt_torpedo_part;   			RandomWeight=10;  RandomQuantity=[25%, 50%]; }
 			{ ResourceType=transphasic_torpedo_part;   			RandomWeight=3;  RandomQuantity=[10%, 25%]; }
 		]
 	}
@@ -496,6 +498,10 @@ Actions
 				FormatKey = "Stats/AntimatterPerQuantumTorpedoPartFmt"
 			}
 			{
+				ID = AntimatterPerTricobaltTorpedoPart
+				FormatKey = "Stats/AntimatterPerTricobaltTorpedoPartFmt"
+			}
+			{
 				ID = TorpedoPartAntimatterUsage
 				FormatKey = "Stats/TorpedoPartAntimatterUsageFmt"
 			}
@@ -504,8 +510,16 @@ Actions
 				FormatKey = "Stats/QuantumTorpedoPartAntimatterUsageFmt"
 			}
 			{
+				ID = TricobaltTorpedoPartAntimatterUsage
+				FormatKey = "Stats/TricobaltorpedoPartAntimatterUsageFmt"
+			}
+			{
 				ID = PowerPerTorpedoPart
 				FormatKey = "Stats/PowerPerTorpedoPartFmt"
+			}
+			{
+				ID = PowerPerTricobaltTorpedoPart
+				FormatKey = "Stats/PowerPerTricobaltTorpedoPartFmt"
 			}
 			{
 				ID = PowerPerQuantumTorpedoPart

@@ -46,10 +46,13 @@ Stats
 	AntimatterCapacityFmt = "<white>Antimatter Capacity:</white> <good>{0}</good>"
 	AntimatterPerTorpedoPartFmt = "<white>Antimatter Per Photon Part:</white> <good>{0}</good>"
 	AntimatterPerQuantumTorpedoPartFmt = "<white>Antimatter Per Quantum Part:</white> <good>{0}</good>"
+	AntimatterPerTricobaltTorpedoPartFmt = "<white>Antimatter Per TricobaltPart:</white> <good>{0}</good>"
 	TorpedoPartAntimatterUsageFmt = "<white>Antimatter Per Photon Part:</white> <good>{0}</good><gray>/sec</gray>"
 	QuantumTorpedoPartAntimatterUsageFmt = "<white>Antimatter Per Quantum Part:</white> <good>{0}</good><gray>/sec</gray>"
+	TricobaltTorpedoPartAntimatterUsageFmt = "<white>Antimatter Per Tricobalt Part:</white> <good>{0}</good><gray>/sec</gray>"
 	PowerPerTorpedoPartFmt = "<white>Power Per Photon Part:</white> <good>{0}</good><gray>/sec</gray>"
-	PowerPerQuantumTorpedoPartFmt = "<white>Power Per Quantum Part:</white> <good>{0}</good><gray>/sec</gray>"
+	PowerPerQuantumtTorpedoPartFmt = "<white>Power Per Quantum Part:</white> <good>{0}</good><gray>/sec</gray>"
+	PowerPerTricobaltTorpedoPartFmt = "<white>Power Per Tricobalt Part:</white> <good>{0}</good><gray>/sec</gray>"
 }
 
 StatCategories
@@ -87,6 +90,10 @@ Resource
 	QuantumTorpedoPart = "Quantum Torpedo Part"
 	QuantumTorpedoPartPlural = "Quantum Torpedo Parts"
 	QuantumTorpedoPartDesc = "Parts for arming quantum torpedo based weapons"
+
+	TricobaltTorpedoPart = "Tricobalt Torpedo Part"
+	TricobaltTorpedoPartPlural = "Tricobalt Torpedo Parts"
+	TricobaltTorpedoPartDesc = "Parts for arming tricobalt devices"
 
 	TransphasicTorpedoPart = "Transphasic Torpedo Part"
 	TransphasicTorpedoPartPlural = "Transphasic Torpedo Parts"

@@ -1,0 +1,13 @@
+ID = stafa.resource_tricobalt_torpedo_part
+Type = Resource
+DescriptionKey = "Resource/TricobaltTorpedoPart"
+CategoryKey = "Doodads/Resources"
+Icon
+{
+	Texture
+	{
+		File = "tricobalt_torpedo_part.png"
+		MipLevels = 2
+	}
+}
+ResourceType = tricobalt_torpedo_part

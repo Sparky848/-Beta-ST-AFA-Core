@@ -75,7 +75,13 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Mode = TorpedoProductionType
 			OnMode = 1
 		}
-		
+		MakeTricobalts
+		{
+			Type = ModeToggle
+			Mode = TorpedoProductionType
+			OnMode = 2
+		}
+
 		AntimatterStorage
 		{
 			Type = ResourceStorage
@@ -103,9 +109,6 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			FromQuantity = 1
 			ToQuantity = 80//140
 		}
-
-		
-
 
 		BatteryStorage
 		{
@@ -138,7 +141,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 					[
 						{
 							Storage = AntimatterSplitter
-							Quantity = 1
+							Quantity = 2//
 						}
 						{
 							Storage = BatteryStorage
@@ -445,6 +448,15 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			IncludeInBlueprints = true
 			Components = &<quantum/quantum_producer.rules>
 		}
+
+		TricobaltToggle
+		{
+			Type = ToggledComponents
+			Toggle = MakeTricobalts
+			IncludeInBlueprints = true
+			Components = &<tricobalt/tricobalt_producer.rules>
+		}
+
 		BuffProvider
 		{
 			Type = GridBuffProvider
@@ -586,11 +598,14 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		AntimatterCapacity = &~/Part/Components/AntimatterStorage/MaxResources
 		AntimatterPerTorpedoPart = (&~/Part/Components/PhotonToggle/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/PhotonToggle/Components/ResourceConverter/ToQuantity)
 		AntimatterPerQuantumTorpedoPart = (&~/Part/Components/QuantumToggle/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/QuantumToggle/Components/ResourceConverter/ToQuantity)
+		AntimatterPerTricobaltTorpedoPart = (&~/Part/Components/TricobaltToggle/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/TricobaltToggle/Components/ResourceConverter/ToQuantity)
 		AntimatterPerSecond = Infinity //(&~/Part/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
 		TorpedoPartAntimatterUsage = [&../AntimatterPerTorpedoPart, &~/Part/Components/PhotonToggle/Components/ResourceConverter/Interval/BaseValue]
 		QuantumTorpedoPartAntimatterUsage = [&../AntimatterPerQuantumTorpedoPart, &~/Part/Components/QuantumToggle/Components/ResourceConverter/Interval/BaseValue]
+		TricobaltTorpedoPartAntimatterUsage = [&../AntimatterPerTricobaltTorpedoPart, &~/Part/Components/TricobaltToggle/Components/ResourceConverter/Interval/BaseValue]
 		PowerPerTorpedoPart = (&~/Part/Components/PhotonToggle/Components/ResourceConverter/From/1/Quantity) / (&~/Part/Components/PhotonToggle/Components/ResourceConverter/ToQuantity) / 1000
 		PowerPerQuantumTorpedoPart = (&~/Part/Components/QuantumToggle/Components/ResourceConverter/From/1/Quantity) / (&~/Part/Components/QuantumToggle/Components/ResourceConverter/ToQuantity) / 1000
+		PowerPerTricobaltTorpedoPart = (&~/Part/Components/TricobaltToggle/Components/ResourceConverter/From/1/Quantity) / (&~/Part/Components/TricobaltToggle/Components/ResourceConverter/ToQuantity) / 1000
 		PowerPerSecond = Infinity //(&~/Part/Components/ResourceConverter/From/1/Quantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue) / 1000
 		//DiamondPowerUsage = [&../PowerPerTorpedoPart, &../PowerPerSecond]
 		PowerCapacity = (&~/Part/Components/BatteryStorage/MaxResources) / 1000

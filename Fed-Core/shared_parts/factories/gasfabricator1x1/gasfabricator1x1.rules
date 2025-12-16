@@ -439,6 +439,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalDoodad
 			{
 				Layer = "doodads_high"
+				Offset = [.5, .5]
 				DamageLevels
 				[
 					{
