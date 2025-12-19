@@ -1,6 +1,6 @@
 ID = "st-afa.beta_coremod"
 Name = "[Beta] ST-AFA - Core"
-Version = "[Beta] 0.3.4"
+Version = "[Beta] 0.3.4a"
 CompatibleGameVersions = ["0.30.3a"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
@@ -511,7 +511,7 @@ Actions
 			}
 			{
 				ID = TricobaltTorpedoPartAntimatterUsage
-				FormatKey = "Stats/TricobaltorpedoPartAntimatterUsageFmt"
+				FormatKey = "Stats/TricobaltTorpedoPartAntimatterUsageFmt"
 			}
 			{
 				ID = PowerPerTorpedoPart

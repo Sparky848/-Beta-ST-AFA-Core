@@ -16,7 +16,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	SelectionPriority = 1
 	MaxHealth = 6000
 	TypeCategories = [provides_torpedo_part, uses_antimatter, uses_power]
-	ReceivableBuffs : ^/0/ReceivableBuffs []
+	ReceivableBuffs : ^/0/ReceivableBuffs [Factory]
 	AllowedDoorLocations
 	[
 		[-1, 2]
@@ -56,6 +56,16 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalToggle = PowerToggle
 			CommandPoints = 1
 		}
+
+		BuffProvider
+		{
+			Type = GridBuffProvider
+			BuffType = Factory
+			BuffAmount = 25%
+			GridDistance = 1
+			OperationalToggle = BatteryStorage
+		}
+
 		TorpedoProductionType
 		{
 			Type = UIToggle
@@ -456,17 +466,6 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			IncludeInBlueprints = true
 			Components = &<tricobalt/tricobalt_producer.rules>
 		}
-
-		BuffProvider
-		{
-			Type = GridBuffProvider
-			BuffType = Factory
-			BuffAmount = 25%
-			GridDistance = 1
-			OperationalToggle = BatteryStorage
-		}
-
-		
 
 		BatterySprites
 		{
