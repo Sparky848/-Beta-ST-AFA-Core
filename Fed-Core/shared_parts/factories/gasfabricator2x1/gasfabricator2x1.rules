@@ -489,6 +489,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		{
 			Type = Graphics
 			Toggle = IsOperational
+			Location = [1, .5]
 			OperationalDoodad
 			{
 				Layer = "doodads_high"
