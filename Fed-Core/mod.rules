@@ -17,6 +17,14 @@ StringsFolder = "strings"
 
 Actions
 [
+	//******************** Render Layers ********************
+	{
+		Action = AddMany
+		AddTo = "<ships/terran/terran.rules>/Terran/RenderLayers"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ManyToAdd = &<render_layers.rules>/RenderLayers		
+	}
 	//******************** EDITOR GROUPS ********************
 	{
 		Action = Add

@@ -1,0 +1,111 @@
+RenderLayers
+[
+	{
+		Key = "roofs_lower"// Ship bucket layer.
+		Value // The actual material.
+		{
+			UniqueBucket = 901
+			RenderStage = High
+			IsRoof = true
+			Inflate = .0001
+			HasNormals = true
+			AtlasTextureParams
+			{
+				MipLevels = 7 // Assumes 64x64 min part sprite size.
+			}
+			Material
+			{
+				Shader = "./Data/ships/common/roof_colored_lit.shader"
+			}
+			DiffuseMaterial
+			{
+				Shader = "./Data/ships/common/roof_colored.shader"
+			}
+			NormalsMaterial
+			{
+				Shader = "./Data/ships/common/roof_normals.shader"
+			}
+		}
+	}
+
+	{
+		Key = "roofs_lower_lights"// Ship bucket layer.
+		Value // The actual material.
+		{
+			UniqueBucket = 922
+			RenderStage = High
+			IsRoof = true
+			Inflate = .0001
+			HasNormals = false
+			AtlasTextureParams
+			{
+				MipLevels = 7 // Assumes 64x64 min part sprite size.
+			}
+			Material
+			{
+				Shader = "./Data/ships/common/parts.shader"
+				TargetBlendMode
+				{
+					SourceRgbFactor = SourceAlpha
+					DestRgbFactor = One
+					RgbOperator = Add
+					SourceAlphaFactor = Zero
+					DestAlphaFactor = One
+					AlphaOperator = Add
+				}
+			}
+		}
+	}
+
+	{
+		Key = "roofs_upper"// Ship bucket layer.
+		Value // The actual material.
+		{
+			UniqueBucket = 1051
+			RenderStage = High
+			IsRoof = true
+			Inflate = .0001
+			HasNormals = true
+			AtlasTextureParams
+			{
+				MipLevels = 7 // Assumes 64x64 min part sprite size.
+			}
+			Material
+			{
+				Shader = "./Data/ships/common/roof_colored_lit.shader"
+			}
+			DiffuseMaterial
+			{
+				Shader = "./Data/ships/common/roof_colored.shader"
+			}
+			NormalsMaterial
+			{
+				Shader = "./Data/ships/common/roof_normals.shader"
+			}
+		}
+	}
+	{
+		Key = "floors_lower"// Ship bucket layer.
+		Value // The actual material.
+		{
+			UniqueBucket = -720
+			RenderStage = Low
+			AtlasTextureParams
+			{
+				MipLevels = 7 // Assumes 64x64 min part sprite size.
+			}
+			Material
+			{
+				Shader = "./Data/ships/common/parts.shader"
+			}
+			GhostMaterial
+			{
+				Shader = "./Data/ships/common/parts_ghost.shader"
+			}
+			NormalsMaterial
+			{
+				Shader = "./Data/ships/common/no_normals.shader"
+			}
+		}
+	}
+]
