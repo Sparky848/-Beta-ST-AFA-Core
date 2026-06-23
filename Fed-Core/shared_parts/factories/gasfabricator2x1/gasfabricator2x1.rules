@@ -61,6 +61,26 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Type = BuffToggle
 			BuffType = IonNebula
 		}
+
+		IsOperationalANDInCloudyNebula
+		{
+			Type = MultiToggle
+			Toggles = [IsOperational, InCloudyNebula]
+			Mode = All
+		}
+		IsOperationalANDInElectronNebula
+		{
+			Type = MultiToggle
+			Toggles = [IsOperational, InElectronNebula]
+			Mode = All
+		}
+		IsOperationalANDInIonNebula
+		{
+			Type = MultiToggle
+			Toggles = [IsOperational, InIonNebula]
+			Mode = All
+		}
+
 		PowerToggle
 		{
 			Type = UIToggle
@@ -68,7 +88,14 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Default = 1
 			RequiresCommand = false
 		}
-
+		FakeBuffProvider
+		{
+			Type = AreaBuffProvider
+			BuffType = FakeBuff
+			BuffArea = [0, -1, 2, 1]
+			BuffAmount = 100%
+			ShowBuffRange = true
+		}
 		CommandConsumer
 		{
 			Type = CommandConsumer
@@ -79,7 +106,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		ConversionTimerCloudy
 		{
 			Type = Timer
-			OperationalToggle = InCloudyNebula
+			OperationalToggle = IsOperationalANDInCloudyNebula
 			Duration = 9//7
 			AutoStart = true
 			Repeats = true
@@ -87,7 +114,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		ConversionTimerElectron
 		{
 			Type = Timer
-			OperationalToggle = InElectronNebula
+			OperationalToggle = IsOperationalANDInElectronNebula
 			Duration = 12//9
 			AutoStart = true
 			Repeats = true
@@ -95,7 +122,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		ConversionTimerIon
 		{
 			Type = Timer
-			OperationalToggle = InIonNebula
+			OperationalToggle = IsOperationalANDInIonNebula
 			Duration = 20//12
 			AutoStart = true
 			Repeats = true
@@ -103,7 +130,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		CloudyGasProducer
 		{
 			Type = TriggeredResourceConverter
-			OperationalToggle = InCloudyNebula
+			OperationalToggle = IsOperationalANDInCloudyNebula
 			Trigger = ConversionTimerCloudy
 			FromStorage = BatteryStorage
 			ToStorage = CloudyGasStorage
@@ -131,7 +158,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		ElectronGasProducer
 		{
 			Type = TriggeredResourceConverter
-			OperationalToggle = InElectronNebula
+			OperationalToggle = IsOperationalANDInElectronNebula
 			Trigger = ConversionTimerElectron
 			FromStorage = BatteryStorage
 			ToStorage = ElectronGasStorage
@@ -159,7 +186,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		IonGasProducer
 		{
 			Type = TriggeredResourceConverter
-			OperationalToggle = InIonNebula
+			OperationalToggle = IsOperationalANDInIonNebula
 			Trigger = ConversionTimerIon
 			FromStorage = BatteryStorage
 			ToStorage = IonGasStorage

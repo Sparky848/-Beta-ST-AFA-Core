@@ -122,10 +122,10 @@ Parts
 
 	BulkAntimatterCrafter = "Bulk Antimatter Crafter"
 	BulkAntimatterCrafterIcon = "Bulk Antimatter Crafter"
-	BulkAntimatterCrafterDesc = "Uses both Hyperium and Dilithium to create Antimatter in batches of 20 (4 stacks)"\
+	BulkAntimatterCrafterDesc = "Uses Hyperium and Dilithium to create Antimatter in batches of 20 (4 stacks)"\
 								"\n <cyan>1 Hyperium = 1 Antimatter</cyan>"\
 								"\n <cyan>1 Dilithium = 10 Antimatter</cyan>"\
-								"\n<good> This factory only produces in batches of 20, it can consume hyperium and dilithium at the same time however </good>"
+								"\n<good> This factory only produces in batches of 20, it can consume hyperium and dilithium at the same time but doesn't require both to function.</good>"
 	
 	FactoryTorpedoPart = "Torpedo Factory"
 	FactoryTorpedoPartIcon = "Torpedo Factory"
@@ -138,15 +138,18 @@ Parts
 	
 	GasFabricator1x1 = "Gas Fabricator 1x1"
 	GasFabricator1x1Icon = "Gas Fabricator 1x1"
-	GasFabricator1x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color> and <color r='193' g='250' b='116' a='255'>Electron Gas Canisters</color> when inside their respective nebulae"
+	GasFabricator1x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color> and <color r='193' g='250' b='116' a='255'>Electron Gas Canisters</color> when inside their respective nebulae"\
+							"\n<bad>Requires a vertical connection to a 1 wide bussard collector</bad>"
 
 	GasFabricator2x1 = "Gas Fabricator 2x1"
 	GasFabricator2x1Icon = "Gas Fabricator 2x1"
-	GasFabricator2x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color>, <color r='193' g='250' b='116' a='255'>Electron</color> and <color r='248' g='59' b='56' a='255'>Ion</color>  Gas Canisters when inside their respective nebulae"
+	GasFabricator2x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color>, <color r='193' g='250' b='116' a='255'>Electron</color> and <color r='248' g='59' b='56' a='255'>Ion</color>  Gas Canisters when inside their respective nebulae"\
+							"\n<bad>Requires a vertical connection to a 2 wide bussard collector</bad>"
 
 	GasFabricator3x1 = "Gas Fabricator 3x1"
 	GasFabricator3x1Icon = "Gas Fabricator 3x1"
-	GasFabricator3x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color>, <color r='193' g='250' b='116' a='255'>Electron</color> and <color r='248' g='59' b='56' a='255'>Ion</color>  Gas Canisters when inside their respective nebulae"
+	GasFabricator3x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color>, <color r='193' g='250' b='116' a='255'>Electron</color> and <color r='248' g='59' b='56' a='255'>Ion</color>  Gas Canisters when inside their respective nebulae"\
+							"\n<bad>Requires a vertical connection to a 3 wide bussard collector</bad>"
 
 	CrewQuarters3x1 = "Twin Bunk"
 	CrewQuarters3x1Icon = "Twin Bunk"
