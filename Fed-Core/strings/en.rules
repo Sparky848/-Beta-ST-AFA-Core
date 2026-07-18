@@ -153,23 +153,38 @@ Parts
 
 	CrewQuarters3x1 = "Twin Bunk"
 	CrewQuarters3x1Icon = "Twin Bunk"
-	CrewQuarters3x1Desc = "Provides beds for 4 crew."
+	CrewQuarters3x1Desc = "Provides beds for 4 crew."\
+						"\n<s18> From Kurim's More Crew Quarters</s18>"
 
 	CrewQuarters3x2 = "Quad Bunk"
 	CrewQuarters3x2Icon = "Quad Bunk"
-	CrewQuarters3x2Desc = "Provides beds for 8 crew."
+	CrewQuarters3x2Desc = "Provides beds for 8 crew."\
+						"\n<s18> From Kurim's More Crew Quarters</s18>"
 
 	CrewQuarters3x3 = "Dormitory"
 	CrewQuarters3x3Icon = "Dormitory"
-	CrewQuarters3x3Desc = "Provides beds for 16 crew."
+	CrewQuarters3x3Desc = "Provides beds for 16 crew."\
+						"\n<s18> From Kurim's More Crew Quarters</s18>"
 
 	CrewQuarters4x3 = "Barracks"
 	CrewQuarters4x3Icon = "Barracks"
-	CrewQuarters4x3Desc = "Provides beds for 24 crew."
+	CrewQuarters4x3Desc = "Provides beds for 24 crew."\
+						"\n<s18> From Kurim's More Crew Quarters</s18>"
 
 	CrewQuarters4x4 = "Residence"
 	CrewQuarters4x4Icon = "Residence"
-	CrewQuarters4x4Desc = "Provides beds for 30 crew."
+	CrewQuarters4x4Desc = "Provides beds for 30 crew."\
+						"\n<s18> From Kurim's More Crew Quarters</s18>"
+
+	BiggerCrewQuarters3x3 = "Dormitory Alt"
+	BiggerCrewQuarters3x3Icon = "Dormitory Alt"
+	BiggerCrewQuarters3x3Desc = "Provides beds for 16 crew."\
+						"\n<s18>Made By Kurim: https://github.com/kurim/Cosmoteer-Mods/tree/main/Kurim/Mods/Bigger_Crew_Quarters</s18>"
+
+	BiggerCrewQuarters4x4 = "Residence Alt"
+	BiggerCrewQuarters4x4Icon = "Residence Alt"
+	BiggerCrewQuarters4x4Desc = "Provides beds for 30 crew."\
+						"\n<s18>Made By Kurim: https://github.com/kurim/Cosmoteer-Mods/tree/main/Kurim/Mods/Bigger_Crew_Quarters</s18>"
 
 	//Asteroids
 	DepositDilithium1x = "Dilithium Deposit (1x Soft)"

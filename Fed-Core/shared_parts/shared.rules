@@ -7,6 +7,9 @@ Parts
 	&<rooms/crew_3x3/crew_3x3.rules>/Part
 	&<rooms/crew_4x3/crew_4x3.rules>/Part
 	&<rooms/crew_4x4/crew_4x4.rules>/Part
+	//From Kurim's Bigger Crew Quarters Github
+	&<rooms/bigger_crew_3x3/crew_3x3.rules>/Part
+	&<rooms/bigger_crew_4x4/crew_4x4.rules>/Part
 	//********** Factories ********
 	&<factories/factory_antimatter/factory_antimatter.rules>/Part
 	&<factories/factory_torpedo/factory_torpedo_parts.rules>/Part
