@@ -60,7 +60,7 @@ Part : <./Data/ships/asteroid/base_small_part_asteroid.rules>/Part
 		CustomShipIcon
 		{
 			Type = CustomShipIcon
-			Icon : <./Data/resources/duranium/duranium.rules>/Overlay
+			Icon : <../../resources/duranium/duranium.rules>/Overlay
 			{
 				Size = [32, 32]
 			}
