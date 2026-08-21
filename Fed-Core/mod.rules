@@ -5,14 +5,14 @@ CompatibleGameVersions = ["0.30.4c"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
 Logo = logo.png
-Description = "For full details please see Steamworkshop\n\n"\
+Description = "For full details please see Steam Workshop\n\n"\
 			  "Adds new STAR TREK stuff to the game \n"\
 			  "- replaces FTL jump sound with warp sounds\n"\
-			  "- adds Starfleet editor group\n"\
-			  "- adds some buffs to the game\n"\
+			  "- adds Starfleet related editor groups\n"\
 			  "- adds new resource: torpedo parts and factories\n"\
-			  "- adds new resource: antimatter (and factory WIP)\n"\
-			  "- adds new resource: dilithium crystals\n"
+			  "- adds new resource: antimatter and factories\n"\
+			  "- adds new resource: dilithium crystals\n"\
+			  "- adds new resource: duranium and factories\n"
 StringsFolder = "strings"
 
 Actions
@@ -449,11 +449,13 @@ Actions
 		ManyToAdd
 		[
 			{ ResourceType=antimatter;              RandomWeight=19;  RandomQuantity=[50%, 100%]; }
-			{ ResourceType=dilithium;           	RandomWeight=2;  RandomQuantity=[20%, 40%]; }
+			{ ResourceType=dilithium;           	RandomWeight=6;  RandomQuantity=[20%, 100%]; }
+			{ ResourceType=duranium;           	RandomWeight=10;  RandomQuantity=[75%, 100%]; }
+			{ ResourceType=duranium_alloy;           	RandomWeight=8;  RandomQuantity=[50%, 100%]; }
 			{ ResourceType=torpedo_part;   			RandomWeight=20;  RandomQuantity=[75%, 100%]; }
-			{ ResourceType=quantum_torpedo_part;   			RandomWeight=15;  RandomQuantity=[50%, 75%]; }
-			{ ResourceType=tricobalt_torpedo_part;   			RandomWeight=10;  RandomQuantity=[25%, 50%]; }
-			{ ResourceType=transphasic_torpedo_part;   			RandomWeight=3;  RandomQuantity=[10%, 25%]; }
+			{ ResourceType=quantum_torpedo_part;   			RandomWeight=15;  RandomQuantity=[50%, 100%]; }
+			{ ResourceType=tricobalt_torpedo_part;   			RandomWeight=10;  RandomQuantity=[25%, 100%]; }
+			{ ResourceType=transphasic_torpedo_part;   			RandomWeight=3;  RandomQuantity=[10%, 100%]; }
 		]
 	}
 	//******************** Asteroids ********************
@@ -468,6 +470,13 @@ Actions
 			//&<asteroids/deposit_dilithium/deposit_dilithium_2x_hard.rules>/Part
 			&<asteroids/deposit_dilithium/deposit_dilithium_3x.rules>/Part
 			//&<asteroids/deposit_dilithium/deposit_dilithium_3x_hard.rules>/Part
+			
+			&<asteroids/deposit_duranium/deposit_duranium_1x.rules>/Part
+			&<asteroids/deposit_duranium/deposit_duranium_1x_hard.rules>/Part
+			&<asteroids/deposit_duranium/deposit_duranium_2x.rules>/Part
+			&<asteroids/deposit_duranium/deposit_duranium_2x_hard.rules>/Part
+			&<asteroids/deposit_duranium/deposit_duranium_3x.rules>/Part
+			&<asteroids/deposit_duranium/deposit_duranium_3x_hard.rules>/Part
 		]
 	}
 	{
@@ -478,6 +487,10 @@ Actions
 			{ Type=stafa.asteroid_dilithium_s;     ChanceWeight=1/16; }
 			{ Type=stafa.asteroid_dilithium_m;     ChanceWeight=1/32; }
 			{ Type=stafa.asteroid_dilithium_l;     ChanceWeight=1/64; }
+
+			{ Type=stafa.asteroid_duranium_s;     ChanceWeight=1/2; }
+			{ Type=stafa.asteroid_duranium_m;     ChanceWeight=1/4; }
+			{ Type=stafa.asteroid_duranium_l;     ChanceWeight=1/8; }
 		]
 	}
 	{
@@ -487,6 +500,9 @@ Actions
 		[
 			{ Type=stafa.asteroid_dilithium_xl;     ChanceWeight=1/2; }
 			{ Type=stafa.asteroid_dilithium_xxl;     ChanceWeight=1/2; }
+
+			{ Type=stafa.asteroid_duranium_xl;     ChanceWeight=1/32; }
+			{ Type=stafa.asteroid_duranium_xxl;     ChanceWeight=1/64; }
 		]
 	}
 	{
@@ -497,6 +513,9 @@ Actions
 			{ Type=stafa.asteroid_dilithium_l;     ChanceWeight=1; }
 			{ Type=stafa.asteroid_dilithium_xl;     ChanceWeight=1/2; }
 			{ Type=stafa.asteroid_dilithium_xxl;     ChanceWeight=1/4; }
+
+			{ Type=stafa.asteroid_duranium_xl;     ChanceWeight=1; }
+			{ Type=stafa.asteroid_duranium_xxl;     ChanceWeight=1/2; }
 		]
 	}
 	//******************** UI ********************
