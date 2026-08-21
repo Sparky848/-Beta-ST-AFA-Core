@@ -1,0 +1,274 @@
+ID = duranium_alloy
+NameKey = "Resource/DuraniumAlloy"
+PluralNameKey = "Resource/DuraniumAlloyPlural"
+DescriptionKey = "Resource/DuraniumAlloyDesc"
+BuyPrice = 140
+MaxPerNugget = 10
+MaxStackSize = 40
+FlexGridPriorityKey = "flex_grid_duranium_alloy"
+FlexGridDefaultPriority = 1
+DropRates = &<./Data/resources/resources.rules>/CommonMaterialDropRates
+Rarity = Common
+
+Icon
+{
+	Texture
+	{
+		File = "icon.png"
+		MipLevels = max
+	}
+	Size = [64, 64]
+}
+
+Overlay
+{
+	Texture
+	{
+		File = "overlay.png"
+		SampleMode = Linear
+		MipLevels = max
+	}
+	Size = [.75, .75]
+}
+
+NuggetSprites
+[
+	{
+		File = "duranium_alloy1.png"
+		NormalsFile = "duranium_alloy1_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy2.png"
+		NormalsFile = "duranium_alloy2_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy3.png"
+		NormalsFile = "duranium_alloy3_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy4.png"
+		NormalsFile = "duranium_alloy4_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy5.png"
+		NormalsFile = "duranium_alloy5_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy6.png"
+		NormalsFile = "duranium_alloy6_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy7.png"
+		NormalsFile = "duranium_alloy7_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy8.png"
+		NormalsFile = "duranium_alloy8_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy9.png"
+		NormalsFile = "duranium_alloy9_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+	{
+		File = "duranium_alloy10.png"
+		NormalsFile = "duranium_alloy10_normals.png"
+		Size = [.75, .75]
+		Offset = [.25+5/64, 0]
+		UVRotation = 1
+	}
+]
+
+StackSprites
+[
+	{
+		File = "duranium_alloy_stack_1.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_1.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_2.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_2.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_3.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_3.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_4.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_4.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_5.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_5.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_6.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_6.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_7.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_7.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_8.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_8.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_9.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_9.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_10.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_10.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_11.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_11.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_12.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_12.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_13.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_13.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_14.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_14.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_15.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_15.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_16.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_16.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_17.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_17.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_18.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_18.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_19.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_19.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_20.png"
+		Size = [.75, .75]
+	}
+	{
+		File = "duranium_alloy_stack_20.png"
+		Size = [.75, .75]
+	}
+]
+
+StackReceiveMediaEffects = &/COMMON_EFFECTS/SteelDeliver
+StackPickupMediaEffects = &/COMMON_EFFECTS/SteelPickup
+NuggetPickupMediaEffects = &/COMMON_EFFECTS/NuggetPickup

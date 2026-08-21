@@ -1,6 +1,8 @@
 Resources
 [
 	&<dilithium/dilithium.rules>
+	&<duranium/duranium.rules>
+	&<duranium_alloy/duranium_alloy.rules>
 	&<antimatter/antimatter.rules>
 	&<torpedo_part/torpedo_part.rules>
 	&<quantum_torpedo_part/quantum_torpedo_part.rules>

@@ -10,11 +10,19 @@ Doodads
 	&<../resources/cloudy_gas/doodad_resource_cloudy_gas.rules>
 	&<../resources/electron_gas/doodad_resource_electron_gas.rules>
 	&<../resources/ion_gas/doodad_resource_ion_gas.rules>
-	
+	&<../resources/duranium/doodad_resource_duranium.rules>
+	&<../resources/duranium_alloy/doodad_resource_duranium_alloy.rules>
+
 	//Asteroids
 	&<asteroids/dilithium/doodad_asteroid_dilithium_s.rules>
 	&<asteroids/dilithium/doodad_asteroid_dilithium_m.rules>
 	&<asteroids/dilithium/doodad_asteroid_dilithium_l.rules>
 	&<asteroids/dilithium/doodad_asteroid_dilithium_xl.rules>
 	&<asteroids/dilithium/doodad_asteroid_dilithium_xxl.rules>
+
+	&<asteroids/duranium/doodad_asteroid_duranium_s.rules>
+	&<asteroids/duranium/doodad_asteroid_duranium_m.rules>
+	&<asteroids/duranium/doodad_asteroid_duranium_l.rules>
+	&<asteroids/duranium/doodad_asteroid_duranium_xl.rules>
+	&<asteroids/duranium/doodad_asteroid_duranium_xxl.rules>
 ]

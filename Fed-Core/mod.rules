@@ -1,6 +1,6 @@
 ID = "st-afa.beta_coremod"
 Name = "[Beta] ST-AFA - Core"
-Version = "[Beta] 0.3.5"
+Version = "[Beta] 0.3.6"
 CompatibleGameVersions = ["0.30.4c"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
@@ -198,6 +198,23 @@ Actions
 			Icon
 			{
 				Texture = &<resources/dilithium/dilithium.rules>/Overlay/Texture
+				VertexColor = [0, 183, 255]
+			}
+			SortOrder = 300
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "Duranium"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "Resource/Duranium"
+			Icon
+			{
+				Texture = &<resources/duranium/duranium.rules>/Overlay/Texture
 				VertexColor = [0, 183, 255]
 			}
 			SortOrder = 300
@@ -532,6 +549,42 @@ Actions
 			{
 				ID = PowerPerQuantumTorpedoPart
 				FormatKey = "Stats/PowerPerQuantumTorpedoPartFmt"
+			}
+			{
+				ID = DuraniumAlloyProduction
+				FormatKey = "Stats/DuraniumAlloyProductionFmt"
+			}
+			{
+				ID = DuraniumAlloyCapacity
+				FormatKey = "Stats/DuraniumAlloyCapacityFmt"
+			}
+			{
+				ID = DuraniumCapacity
+				FormatKey = "Stats/DuraniumCapacityFmt"
+			}
+			{
+				ID = DuraniumAlloyUsage
+				FormatKey = "Stats/DuraniumAlloyUsageFmt"
+			}
+			{
+				ID = DuraniumAlloyPowerUsage
+				FormatKey = "Stats/DuraniumAlloyPowerUsageFmt"
+			}
+			{
+				ID = DuraniumAlloyHeatGeneration
+				FormatKey = "Stats/DuraniumAlloyHeatGenerationFmt"
+			}
+			{
+				ID = DuraniumPerDuraniumAlloy
+				FormatKey = "Stats/DuraniumPerDuraniumAlloyFmt"
+			}
+			{
+				ID = DuraniumPerSecond
+				FormatKey = "Stats/DuraniumPerSecondFmt"
+			}
+			{
+				ID = PowerPerDuraniumAlloy
+				FormatKey = "Stats/PowerPerDuraniumAlloyFmt"
 			}
 		]
 	}

@@ -7,9 +7,9 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	DescriptionKey = "Parts/GasFabricator1x1Desc"
 	Resources
 	[
-		[steel, 26]
-		[coil, 14]
-		[tristeel, 2]
+		[steel, 8]
+		[duranium_alloy, 6]
+		[coil, 14]//2,450 > 2,440
 	]
 	Size = [1, 1]
 	SelectionPriority = 1

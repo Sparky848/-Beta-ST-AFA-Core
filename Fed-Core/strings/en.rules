@@ -55,6 +55,15 @@ Stats
 	PowerPerTorpedoPartFmt = "<white>Power Per Photon Part:</white> <good>{0}</good><gray>/sec</gray>"
 	PowerPerQuantumTorpedoPartFmt = "<white>Power Per Quantum Part:</white> <good>{0}</good><gray>/sec</gray>"
 	PowerPerTricobaltTorpedoPartFmt = "<white>Power Per Tricobalt Part:</white> <good>{0}</good><gray>/sec</gray>"
+	DuraniumAlloyProductionFmt = "<white>Production Rate:</white> <good>{0:0.##}</good><gray> duranium alloy/sec</gray>"
+	DuraniumAlloyCapacityFmt = "<white>Duranium Alloy Capacity:</white> <good>{0}</good>"
+	DuraniumCapacityFmt = "<white>Duranium Capacity:</white> <good>{0}</good>"
+	DuraniumPerDuraniumAlloyFmt = "<white>Duranium Per Duranium Alloy:</white> <good>{0}</good>"
+	DuraniumPerSecondFmt = "<white>Duranium</white> <good>{0}</good><gray>/sec</gray>"
+	DuraniumAlloyDuraniumUsageFmt = "<white>Duranium Use:</white> <good>{0:0.##}</good><gray>/duranium alloy (</gray><good>{1:0.##}</good><gray>/sec)</gray>"
+	PowerPerDuraniumAlloyFmt = "<white>Power Per Duranium Alloy:</white> <good>{0}</good><gray>/sec</gray>"
+	DuraniumAlloyPowerUsageFmt = "<white>Power Use:</white> <good>{0:0.##}</good><gray>/duranium alloy (</gray><good>{1:0.##}</good><gray>/sec)</gray>"
+	DuraniumAlloyHeatGenerationFmt = "<white>Heat Gen.:</white> <good>{0:0.##}</good> <gray>MJ/duranium alloy (</gray><good>{1:0.##}</good> <gray>MJ/sec)</gray>"
 }
 
 StatCategories
@@ -74,6 +83,12 @@ Doodads
 	AsteroidDilithium_L = "Dilithium Asteroid (L)"
 	AsteroidDilithium_XL = "Dilithium Asteroid (XL)"
 	AsteroidDilithium_XXL = "Dilithium Asteroid (XXL)"
+
+	AsteroidDuranium_S = "Duranium Asteroid (S)"
+	AsteroidDuranium_M = "Duranium Asteroid (M)"
+	AsteroidDuranium_L = "Duranium Asteroid (L)"
+	AsteroidDuranium_XL = "Duranium Asteroid (XL)"
+	AsteroidDuranium_XXL = "Duranium Asteroid (XXL)"
 }
 Resource
 {
@@ -85,6 +100,14 @@ Resource
 	DilithiumPlural = "Dilithium Crystals"
 	DilithiumDesc = "Complex and rare crystal that is needed for matter-antimatter reactions"
 	
+	Duranium = "Duranium Ore"
+	DuraniumPlural = "Duranium Ore"
+	DuraniumDesc = "An extremely strong, silvery metallic substance used in alloys for hull construction of starships and space stations."
+
+	DuraniumAlloy = "Duranium Alloy"
+	DuraniumAlloyPlural = "Duranium Alloy"
+	DuraniumAlloyDesc = "An extremely strong alloy for use in hull construction of starships and space stations."
+
 	TorpedoPart = "Torpedo Part"
 	TorpedoPartPlural = "Torpedo Parts"
 	TorpedoPartDesc = "Parts for arming torpedo based weapons"
@@ -150,6 +173,10 @@ Parts
 	GasFabricator3x1Icon = "Gas Fabricator 3x1"
 	GasFabricator3x1Desc = "Fabricates <color r='202' g='230' b='253' a='255'>Cloudy</color>, <color r='193' g='250' b='116' a='255'>Electron</color> and <color r='248' g='59' b='56' a='255'>Ion</color>  Gas Canisters when inside their respective nebulae"\
 							"\n<bad>Requires a vertical connection to a 3 wide bussard collector</bad>"
+
+	FactoryDuraniumAlloy = "Duranium Alloy Factory"
+	FactoryDuraniumAlloyIcon = "Duranium Alloy Factory"
+	FactoryDuraniumAlloyDesc = "Uses duranium ore to produce ship-grade duranium alloy"
 
 	CrewQuarters3x1 = "Twin Bunk"
 	CrewQuarters3x1Icon = "Twin Bunk"

@@ -18,4 +18,5 @@ Parts
 	&<factories/gasfabricator1x1/gasfabricator1x1.rules>/Part
 	&<factories/gasfabricator2x1/gasfabricator2x1.rules>/Part
 	&<factories/gasfabricator3x1/gasfabricator3x1.rules>/Part
+	&<factories/factory_duranium_alloy/factory_duranium_alloy.rules>/Part
 ]

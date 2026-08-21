@@ -7,10 +7,11 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	DescriptionKey = "Parts/FactoryTorpedoPartDesc"
 	Resources
 	[
-		[steel, 56]
+		[duranium_alloy, 24]
+		[steel, 12]
 		[coil, 12]
-		[coil2, 4]
-		[tristeel, 4]
+		[coil2, 10]
+		[processor, 1]//4,600 > 10,360 tweaked to be more on-par with vanilla factories, while not completely ruining existing ships (hopefully)
 	]
 	Size = [2, 3]
 	SelectionPriority = 1

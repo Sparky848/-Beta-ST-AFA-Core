@@ -6,6 +6,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	JobsIcon = &<./Data/gui/game/crew/crew_gui.rules>/ToolIcon
 	ID = kurim.bigger3x3crewquarters 
 	//OtherIDs = [3x3crewquarters]
+	OtherIDs = [bigger3x3crewquarters_L, bigger3x3crewquarters_R, kurim.bigger3x3crewquarters_L, kurim.bigger3x3crewquarters_R]
+	FlipWhenLoadingIDs = [bigger3x3crewquarters_R, kurim.bigger3x3crewquarters_R]
+	IsFlippable = true
+	IsRotatable = true
 	EditorParentParts = [stafa.3x3crewquarters]
 	DescriptionKey = "Parts/BiggerCrewQuarters3x3Desc"
 	Resources

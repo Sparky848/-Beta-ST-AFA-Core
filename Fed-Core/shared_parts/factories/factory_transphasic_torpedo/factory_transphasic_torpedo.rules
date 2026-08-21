@@ -7,11 +7,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	DescriptionKey = "Parts/FactoryTransphasicTorpedoPartDesc"
 	Resources
 	[
-		[steel, 246]
-		[tristeel, 72]
-		[coil, 128]
+		[duranium_alloy, 124]
+		[steel, 48]
 		[coil2, 64]
-		[diamond, 12]
+		[processor, 6]//100,550 > 52,760 massive nerf until I rework these
 	]
 	Size = [3, 4]
 	IsFlippable = false

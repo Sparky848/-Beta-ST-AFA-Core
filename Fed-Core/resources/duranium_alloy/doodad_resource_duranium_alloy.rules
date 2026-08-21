@@ -1,0 +1,13 @@
+ID = stafa.resource_duranium_alloy
+Type = Resource
+DescriptionKey = "Resource/DuraniumAlloy"
+CategoryKey = "Doodads/Resources"
+Icon
+{
+	Texture
+	{
+		File = "duranium_alloy.png"
+		MipLevels = 2
+	}
+}
+ResourceType = duranium_alloy

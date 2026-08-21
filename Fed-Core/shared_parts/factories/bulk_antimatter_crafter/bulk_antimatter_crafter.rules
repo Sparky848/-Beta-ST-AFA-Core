@@ -7,11 +7,12 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	DescriptionKey = "Parts/BulkAntimatterCrafterDesc"
 	Resources
 	[
-		[steel, 248]
-		[coil, 48]
-		[coil2, 32]
-		[tristeel, 48]
-		[processor, 5]
+		[duranium_alloy, 76]
+		[steel, 60]
+		[coil2, 42]
+		[coil, 24]
+		[tristeel, 16]
+		[processor, 5]//42,700 > 42,840
 	]
 	Size = [6, 5]
 	SelectionPriority = 1
