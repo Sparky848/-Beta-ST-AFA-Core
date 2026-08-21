@@ -3,7 +3,7 @@ Part : <./Data/ships/asteroid/base_small_part_asteroid.rules>/Part
 	NameKey = "Parts/DepositDuranium1x"
 	IconNameKey = "Parts/DepositDuranium1xIcon"
 	DescriptionKey = "Resource/DuraniumDesc"
-	ID = cosmoteer.deposit_duranium_1x // Part IDs must always be in the form of "author_name.part_name". If making your own mod, do *not* use "cosmoteer" as your author name, because it may conflict with future vanilla parts.
+	ID = stafa.deposit_duranium_1x // Part IDs must always be in the form of "author_name.part_name". If making your own mod, do *not* use "cosmoteer" as your author name, because it may conflict with future vanilla parts.
 	SelectionTypeID = "deposit_duranium"
 	EditorGroup = "Duranium"
 	IsFlippable = true
