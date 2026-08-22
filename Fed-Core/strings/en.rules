@@ -84,11 +84,11 @@ Doodads
 	AsteroidDilithium_XL = "Dilithium Asteroid (XL)"
 	AsteroidDilithium_XXL = "Dilithium Asteroid (XXL)"
 
-	AsteroidDuranium_S = "Duranium Asteroid (S)"
-	AsteroidDuranium_M = "Duranium Asteroid (M)"
-	AsteroidDuranium_L = "Duranium Asteroid (L)"
-	AsteroidDuranium_XL = "Duranium Asteroid (XL)"
-	AsteroidDuranium_XXL = "Duranium Asteroid (XXL)"
+	AsteroidDuranium_STAFA_S = "Duranium Asteroid (S)"
+	AsteroidDuranium_STAFA_M = "Duranium Asteroid (M)"
+	AsteroidDuranium_STAFA_L = "Duranium Asteroid (L)"
+	AsteroidDuranium_STAFA_XL = "Duranium Asteroid (XL)"
+	AsteroidDuranium_STAFA_XXL = "Duranium Asteroid (XXL)"
 }
 Resource
 {
@@ -100,10 +100,11 @@ Resource
 	DilithiumPlural = "Dilithium Crystals"
 	DilithiumDesc = "Complex and rare crystal that is needed for matter-antimatter reactions"
 	
-	Duranium = "Duranium Ore"
-	DuraniumPlural = "Duranium Ore"
-	DuraniumDesc = "An extremely strong, silvery metallic substance used in alloys for hull construction of starships and space stations."
-
+	Duranium_STAFA = "Duranium Ore"
+	Duranium_STAFAPlural = "Duranium Ore"
+	Duranium_STAFADesc = "An extremely strong, silvery metallic substance used in alloys for hull construction of starships and space stations."
+	Duranium_STAFAHardDesc = "<string id='Resource/Duranium_STAFADesc'/>\n\n<string id='Resource/NotMineable'/>"
+//changed to have _STAFA for compat with ETTM
 	DuraniumAlloy = "Duranium Alloy"
 	DuraniumAlloyPlural = "Duranium Alloy"
 	DuraniumAlloyDesc = "An extremely strong alloy for use in hull construction of starships and space stations."
@@ -225,4 +226,19 @@ Parts
 	DepositDilithium3x = "Dilithium Deposit (3x Soft)"
 	DepositDilithium3xIcon = "Dilithium Deposit (3x Soft)"
 	//DepositDilithium3xDesc = "Dilithium Deposit (3x Soft)"
+
+	DepositDuranium_STAFA1x = "Duranium Deposit (1x Soft)"
+	DepositDuranium_STAFA1xIcon = "Duranium Deposit (1x Soft)"
+	DepositDuranium_STAFA1xHard = "Duranium Deposit (1x Hard)"
+	DepositDuranium_STAFA1xHardIcon = "Duranium Deposit (1x Hard)"
+
+	DepositDuranium_STAFA2x = "Duranium Deposit (2x Soft)"
+	DepositDuranium_STAFA2xIcon = "Duranium Deposit (2x Soft)"
+	DepositDuranium_STAFA2xHard = "Duranium Deposit (2x Hard)"
+	DepositDuranium_STAFA2xHardIcon = "Duranium Deposit (2x Hard)"
+
+	DepositDuranium_STAFA3x = "Duranium Deposit (3x Soft)"
+	DepositDuranium_STAFA3xIcon = "Duranium Deposit (3x Soft)"
+	DepositDuranium_STAFA3xHard = "Duranium Deposit (3x Hard)"
+	DepositDuranium_STAFA3xHardIcon = "Duranium Deposit (3x Hard)"
 }

@@ -1,6 +1,6 @@
 ID = "st-afa.beta_coremod"
 Name = "[Beta] ST-AFA - Core"
-Version = "[Beta] 0.4.0"
+Version = "[Beta] 0.4.0.1"
 CompatibleGameVersions = ["0.30.4c"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
@@ -206,12 +206,12 @@ Actions
 	{
 		Action = Add
 		AddTo = "<gui/game/designer/editor_groups.rules>"
-		Name = "Duranium"
+		Name = "Duranium_STAFA"
 		CreateIfNotExisting = true
 		IgnoreIfNotExisting = true
 		ToAdd
 		{
-			NameKey = "Resource/Duranium"
+			NameKey = "Resource/Duranium_STAFA"
 			Icon
 			{
 				Texture = &<resources/duranium/duranium.rules>/Overlay/Texture

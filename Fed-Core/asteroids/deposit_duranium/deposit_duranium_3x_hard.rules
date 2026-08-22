@@ -1,18 +1,18 @@
 Part : <./Data/ships/asteroid/base_small_part_asteroid.rules>/Part
 {
-	NameKey = "Parts/DepositDuranium3xHard"
-	IconNameKey = "Parts/DepositDuranium3xHardIcon"
-	DescriptionKey = "Resource/DuraniumHardDesc"
+	NameKey = "Parts/DepositDuranium_STAFA3xHard"
+	IconNameKey = "Parts/DepositDuranium_STAFA3xHardIcon"
+	DescriptionKey = "Resource/Duranium_STAFAHardDesc"
 	ID = stafa.deposit_duranium_3x_hard // Part IDs must always be in the form of "author_name.part_name". If making your own mod, do *not* use "cosmoteer" as your author name, because it may conflict with future vanilla parts.
-	SelectionTypeID = "deposit_duranium"
-	EditorGroup = "Duranium"
+	SelectionTypeID = "deposit_duranium_stafa"
+	EditorGroup = "Duranium_STAFA"
 	IsFlippable = true
 	MaxHealth = 20000
 	IsCrewSalvageable = false
 	ReceivableBuffs : ^/0/ReceivableBuffs []
 	Resources
 	[
-		[duranium, 3]
+		[duranium_stafa, 3]
 	]
 	EditorIcon
 	{

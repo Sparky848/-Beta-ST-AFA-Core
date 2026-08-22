@@ -1,6 +1,6 @@
 ID = stafa.asteroid_duranium_m
 Type = GeneratedShip
-DescriptionKey = "Doodads/AsteroidDuranium_M"
+DescriptionKey = "Doodads/AsteroidDuranium_STAFA_M"
 CategoryKey = "Doodads/Asteroids"
 Tags = [asteroid]
 Icon

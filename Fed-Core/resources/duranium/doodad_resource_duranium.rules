@@ -1,6 +1,6 @@
 ID = stafa.resource_duranium
 Type = Resource
-DescriptionKey = "Resource/Duranium"
+DescriptionKey = "Resource/Duranium_STAFA"
 CategoryKey = "Doodads/Resources"
 Icon
 {
@@ -10,4 +10,4 @@ Icon
 		MipLevels = 2
 	}
 }
-ResourceType = duranium
+ResourceType = duranium_stafa

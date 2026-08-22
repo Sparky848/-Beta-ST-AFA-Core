@@ -1,12 +1,12 @@
-ID = duranium
-NameKey = "Resource/Duranium"
-PluralNameKey = "Resource/DuraniumPlural"
-DescriptionKey = "Resource/DuraniumDesc"
+ID = duranium_stafa
+NameKey = "Resource/Duranium_STAFA"
+PluralNameKey = "Resource/Duranium_STAFAPlural"
+DescriptionKey = "Resource/Duranium_STAFADesc"
 BuyPrice = 100
 AsteroidDensity = 25 / (&BuyPrice)
 MaxPerNugget = 1
 MaxStackSize = 5
-FlexGridPriorityKey = "flex_grid_duranium"
+FlexGridPriorityKey = "flex_grid_duranium_stafa"
 FlexGridDefaultPriority = 1
 DropRates = &<./Data/resources/resources.rules>/ElementDropRates
 Rarity = RawCommon
