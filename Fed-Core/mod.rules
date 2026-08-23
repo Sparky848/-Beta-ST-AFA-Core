@@ -450,7 +450,7 @@ Actions
 		[
 			{ ResourceType=antimatter;              RandomWeight=19;  RandomQuantity=[50%, 100%]; }
 			{ ResourceType=dilithium;           	RandomWeight=6;  RandomQuantity=[20%, 100%]; }
-			{ ResourceType=duranium;           	RandomWeight=10;  RandomQuantity=[75%, 100%]; }
+			{ ResourceType=duranium_stafa;           	RandomWeight=10;  RandomQuantity=[75%, 100%]; }
 			{ ResourceType=duranium_alloy;           	RandomWeight=8;  RandomQuantity=[50%, 100%]; }
 			{ ResourceType=torpedo_part;   			RandomWeight=20;  RandomQuantity=[75%, 100%]; }
 			{ ResourceType=quantum_torpedo_part;   			RandomWeight=15;  RandomQuantity=[50%, 100%]; }
