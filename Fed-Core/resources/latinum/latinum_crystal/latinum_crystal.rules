@@ -1,0 +1,71 @@
+ID = latinum_crystal
+NameKey = "Resource/LatinumCrystal"
+PluralNameKey = "Resource/LatinumCrystalPlural"
+DescriptionKey = "Resource/LatinumCrystalDesc"
+BuyPrice = 350
+AsteroidDensity = 10 / (&BuyPrice)
+MaxPerNugget = 1
+MaxStackSize = 5
+FlexGridPriorityKey = "flex_grid_latinum_crystal"
+FlexGridDefaultPriority = 1
+DropRates = &<./Data/resources/resources.rules>/RareMaterialDropRates
+Rarity = UltraRare
+
+Icon
+{
+	Texture
+	{
+		File = "icon.png"
+		MipLevels = max
+	}
+	Size = [64, 64]
+}
+
+Overlay
+{
+	Texture
+	{
+		File = "overlay.png"
+		SampleMode = Linear
+		MipLevels = max
+	}
+	Size = [.75, .75]
+}
+
+NuggetSprite
+{
+	File = "latinum_crystal.png"
+	NormalsFile = "latinum_crystal_normals.png"
+	Size = [1, 1]
+	Offset = [.25+4/64, 0]
+	UVRotation = 1
+}
+
+StackSprites
+[
+	{
+		File = "stack_1.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_2.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_3.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_4.png"
+		Size = [1, 1]
+	}
+	{
+		File = "stack_5.png"
+		Size = [1, 1]
+	}
+]
+
+StackReceiveMediaEffects = &/COMMON_EFFECTS/DiamondDeliver
+StackPickupMediaEffects = &/COMMON_EFFECTS/DiamondPickup
+NuggetPickupMediaEffects = &/COMMON_EFFECTS/NuggetPickup
+

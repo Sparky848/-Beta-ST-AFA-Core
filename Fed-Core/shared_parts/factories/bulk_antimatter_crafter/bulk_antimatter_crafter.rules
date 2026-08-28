@@ -39,7 +39,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			File = "icon.png"
 			SampleMode = Linear
 		}
-		Size = [53.33, 64]
+		Size = [72, 64]
 	}
 	Components : ^/0/Components
 	{
@@ -148,9 +148,39 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			OperationalToggle = PowerToggle
 		}
 
+		InternalAntimatterStorage
+		{
+			Type = ResourceStorage
+			ResourceType = antimatter
+			MaxResources = 140
+		}
+		InternalCapacity
+		{
+			Type = ProgressBar
+			OperationalToggle = IsOperational
+			ShowProgressFor = BatteryStorage
+			Invert = false
+			LowColor = [170, 183, 0]
+			HighColor = [238, 255, 0]
+			FullColor = [238, 255, 0]
+			Height = 7
+		}
+		InternalAntimatterCapacity
+		{
+			Type = ProgressBar
+			OperationalToggle = IsOperational
+			ShowProgressFor = InternalAntimatterStorage
+			Invert = false
+			LowColor = [0, 25, 166]
+			HighColor = [0, 34, 227]
+			FullColor = [0, 34, 227]
+			Height = 8
+		}
 		HyperiumResourceConverter
 		{
 			Type = ResourceConverter
+			MinFromQuantityForConversion = 1
+			MinToQuantityForConversion = 1
 			OperationalToggle = IsOperational
 			From
 			[
@@ -159,15 +189,17 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			        Quantity = 1
 			    }
 			]
-			ToStorage = FakeResourceStorage
+			ToStorage = InternalAntimatterStorage
 			ToQuantity = 1
-			Interval = 0.1
+			Interval = .25
 			CheckResourceLimits = true
 		}
 		DilithiumResourceConverter
 		{
 			Type = ResourceConverter
 			OperationalToggle = IsOperational
+			MinFromQuantityForConversion = 1
+			MinToQuantityForConversion = 20
 			From
 			[
 			    {
@@ -175,93 +207,46 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			        Quantity = 1
 			    }
 			]
-			ToStorage = FakeResourceStorage
-			ToQuantity = 20
-			Interval = 0.1
+			ToStorage = InternalAntimatterStorage
+			ToQuantity = 10
+			Interval = 1
 			CheckResourceLimits = true
 		}
-		InternalAntimatterResourceConverter
-		{
-			Type = ResourceConverter
-			OperationalToggle = IsOperational
-			From
-			[
-			    {
-			        Storage = FakeResourceStorage
-			        Quantity = 40
-			    }
-				{
-			        Storage = BatteryStorage
-			        Quantity = 2000
-			    }
-			]
-			ToStorage = FakeResourceStorage2
-			ToQuantity = 20
-			Interval = 5
-			CheckResourceLimits = true
-		}
-		InternalAntimatterResourceConverter2
-		{
-			Type = ResourceConverter
-			OperationalToggle = IsOperational
-			From
-			[
-			    {
-			        Storage = FakeResourceStorage
-			        Quantity = 40
-			    }
-				{
-			        Storage = BatteryStorage
-			        Quantity = 2000
-			    }
-			]
-			ToStorage = FakeResourceStorage2
-			ToQuantity = 20
-			Interval = 5
-			CheckResourceLimits = true
-		}
-		FakeResourceStorage
-		{
-			Type = ResourceStorage
-			ResourceType = ion_energy
-			MaxResources = 80
-		}
-		FakeResourceStorage2
-		{
-			Type = ResourceStorage
-			ResourceType = ion_energy
-			MaxResources = 80
-		}
+
 		AntimatterResourceConverter
 		{
 			Type = ResourceConverter
 			OperationalToggle = IsOperational
+			MinFromQuantityForConversion = 1
+			MinToQuantityForConversion = 1
 			From
 			[
 			    {
-			        Storage = FakeResourceStorage2
+			        Storage = InternalAntimatterStorage
 			        Quantity = 1
 			    }
 			]
 			ToStorage = AntimatterStorage
 			ToQuantity = 1
-			Interval = 1
+			Interval = .2
 			CheckResourceLimits = true
 		}
 		AntimatterResourceConverter2
 		{
 			Type = ResourceConverter
 			OperationalToggle = IsOperational
+			MinFromQuantityForConversion = 1
+			MinToQuantityForConversion = 1
 			From
 			[
 			    {
-			        Storage = FakeResourceStorage
+			        Storage = InternalAntimatterStorage
 			        Quantity = 1
 			    }
 			]
 			ToStorage = AntimatterStorage2
 			ToQuantity = 1
-			Interval = 1
+			Interval = .2
 			CheckResourceLimits = true
 		}
 		ConvertEffects
@@ -456,11 +441,11 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 						Size = [6, 5]
 					}
 					{
-						File = "./Data/ships/terran/factory_diamond/floor_33.png"
+						File = "floor_33.png"
 						Size = [6, 5]
 					}
 					{
-						File = "./Data/ships/terran/factory_diamond/floor_66.png"
+						File = "floor_66.png"
 						Size = [6, 5]
 					}
 				]
@@ -645,15 +630,15 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				DamageLevels
 				[
 					{
-						File = "./Data/ships/terran/factory_diamond/walls.png"
+						File = "walls.png"
 						Size = [6, 5]
 					}
 					{
-						File = "./Data/ships/terran/factory_diamond/walls_33.png"
+						File = "walls_33.png"
 						Size = [6, 5]
 					}
 					{
-						File = "./Data/ships/terran/factory_diamond/walls_66.png"
+						File = "walls_66.png"
 						Size = [6, 5]
 					}
 				]
@@ -664,7 +649,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				DamageLevels
 				[
 					{
-						File = "./Data/ships/terran/factory_diamond/lights.png"
+						File = "lights.png"
 						Size = [6, 5]
 					}
 				]
@@ -675,18 +660,18 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				DamageLevels
 				[
 					{
-						File = "./Data/ships/terran/factory_diamond/roof1.png"
-						NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1.png"
+						File = "roof.png"
+						NormalsFile = "roof_normals.png"
 						Size = [6, 5]
 					}
 					{
-						File = "./Data/ships/terran/factory_diamond/roof1_33.png"
-						NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1_33.png"
+						File = "roof_33.png"
+						NormalsFile = "roof_normals_33.png"
 						Size = [6, 5]
 					}
 					{
-						File = "./Data/ships/terran/factory_diamond/roof1_66.png"
-						NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1_66.png"
+						File = "roof_66.png"
+						NormalsFile = "roof_normals_66.png"
 						Size = [6, 5]
 					}
 				]
@@ -719,13 +704,14 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				[
 					{
 						File = "./Data/ships/common/light_blob.png"
-						Size = [4, 4]
+						Size = [6, 5]
 						Z = 0.5 // Controls the "height" of the light for the purposes of normal mapping. Set to -1 (or any negative number) to disable normal lighting for this light.
-						VertexColor = [255*1.5,0,0]
+						VertexColor = [41*1.4, 224*1.4, 255*1.4]
 					}
 				]
 			}
 		}
+
 
 		BatterySprites
 		{
@@ -823,12 +809,24 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 					}
 				}
 
-				// No antimatter.
+				// No Hyperium.
 				{
 					Toggle = HyperiumStorage
 					AtlasSprite
 					{
-						File = &/INDICATORS/NoResource
+						File = "./Data/resources/hyperium/overlay.png"
+						VertexColor = [255*1.4, 0, 0]
+						Size = [1, 1]
+					}
+				}
+
+				// No Dilithium.
+				{
+					Toggle = DilithiumStorage
+					AtlasSprite
+					{
+						File = "../../../resources/dilithium/overlay.png"
+						VertexColor = [255*1.4, 0, 0]
 						Size = [1, 1]
 					}
 				}
@@ -848,7 +846,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		Blueprints
 		{
 			Type = BlueprintSprite
-			File = "./Data/ships/terran/factory_diamond/blueprints.png"
+			File = "blueprints.png"
 			Size = [6, 5]
 		}
 	}

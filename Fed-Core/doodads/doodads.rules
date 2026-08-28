@@ -12,6 +12,11 @@ Doodads
 	&<../resources/ion_gas/doodad_resource_ion_gas.rules>
 	&<../resources/duranium/doodad_resource_duranium.rules>
 	&<../resources/duranium_alloy/doodad_resource_duranium_alloy.rules>
+	&<../resources/latinum/latinum_crystal/doodad_resource_latinum_crystal.rules>
+//	&<../resources/latinum/latinum_slip/doodad_resource_latinum_slip.rules>
+//	&<../resources/latinum/latinum_strip/doodad_resource_latinum_strip.rules>
+//	&<../resources/latinum/latinum_bar/doodad_resource_latinum_bar.rules>
+	&<../resources/latinum/latinum_brick/doodad_resource_latinum_brick.rules>
 
 	//Asteroids
 	&<asteroids/dilithium/doodad_asteroid_dilithium_s.rules>
@@ -25,4 +30,10 @@ Doodads
 	&<asteroids/duranium/doodad_asteroid_duranium_l.rules>
 	&<asteroids/duranium/doodad_asteroid_duranium_xl.rules>
 	&<asteroids/duranium/doodad_asteroid_duranium_xxl.rules>
+
+	&<asteroids/latinum_crystal/doodad_asteroid_latinum_crystal_s.rules>
+	&<asteroids/latinum_crystal/doodad_asteroid_latinum_crystal_m.rules>
+	&<asteroids/latinum_crystal/doodad_asteroid_latinum_crystal_l.rules>
+	&<asteroids/latinum_crystal/doodad_asteroid_latinum_crystal_xl.rules>
+	&<asteroids/latinum_crystal/doodad_asteroid_latinum_crystal_xxl.rules>
 ]

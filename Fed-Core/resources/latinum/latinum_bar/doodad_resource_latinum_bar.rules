@@ -1,0 +1,13 @@
+ID = stafa.resource_latinum_bar
+Type = Resource
+DescriptionKey = "Resource/LatinumBar"
+CategoryKey = "Doodads/Resources"
+Icon
+{
+	Texture
+	{
+		File = "latinum_bar.png"
+		MipLevels = 2
+	}
+}
+ResourceType = latinum_bar

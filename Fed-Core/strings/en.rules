@@ -89,6 +89,12 @@ Doodads
 	AsteroidDuranium_STAFA_L = "Duranium Asteroid (L)"
 	AsteroidDuranium_STAFA_XL = "Duranium Asteroid (XL)"
 	AsteroidDuranium_STAFA_XXL = "Duranium Asteroid (XXL)"
+
+	AsteroidLatinumCrystal_S = "Latinum Crystal Asteroid (S)"
+	AsteroidLatinumCrystal_M = "Latinum Crystal Asteroid (M)"
+	AsteroidLatinumCrystal_L = "Latinum Crystal Asteroid (L)"
+	AsteroidLatinumCrystal_XL = "Latinum Crystal Asteroid (XL)"
+	AsteroidLatinumCrystal_XXL = "Latinum Crystal Asteroid (XXL)"
 }
 Resource
 {
@@ -136,6 +142,34 @@ Resource
 	IonGas = "Ion Gas Canister"
 	IonGasPlural = "Ion Gas Canisters"
 	IonGasDesc = "<color r='248' g='59' b='56' a='255'><i>Replicated canister containing angry thuds of deep red gases</i></color>"
+
+	LatinumCrystal = "Crystallised Latinum"
+	LatinumCrystalPlural = "Crystallised Latinum"
+	LatinumCrystalIcon = "Crystallised Latinum"
+	LatinumCrystalDesc = "Incredibly rare, formed within nebulae these unreplicatable crystals grow over millenia."\
+						"\nWhile naturally found as a liquid on most planets, the deep calms of space allow these crystals to form in a solid state"
+	LatinumCrystalHardDesc = "<string id='Resource/LatinumCrystalDesc'/>\n\n<string id='Resource/NotMineable'/>"
+
+	LatinumSlip = "Latinum Slip"
+	LatinumSlipPlural = "Latinum Slips"
+	LatinumSlipIcon = "Latinum Slip"
+	LatinumSlipDesc = "Small, simple slip plated in worthless gold."
+
+	LatinumStrip = "Latinum Strip"
+	LatinumStripPlural = "Latinum Strips"
+	LatinumStripIcon = "Latinum Strip"
+	LatinumStripDesc = "The most commonly seen day to day latinum product, housing a comfortable amount of latinum"
+
+	LatinumBar = "Latinum Bar"
+	LatinumBarPlural = "Latinum Bars"
+	LatinumBarIcon = "Latinum Bar" 
+	LatinumBarDesc = "Now you're getting somewhere, a few dof these will kit you out nicely."
+
+	LatinumBrick = "Latinum Brick"
+	LatinumBrickPlural = "Latinum Bricks"
+	LatinumBrickIcon = "Latinum Brick"
+	LatinumBrickDesc = "Contains such valuable quantities of latinum the gold used in it's plating is almost insulting"\
+				"\n<s20><i><color r='255' g='218' b='95' a='232'>Tapping two of these together is said to produce one of the best sounds in the galaxy</color></i></s20>"
 }
 
 Parts
@@ -146,10 +180,11 @@ Parts
 
 	BulkAntimatterCrafter = "Bulk Antimatter Crafter"
 	BulkAntimatterCrafterIcon = "Bulk Antimatter Crafter"
-	BulkAntimatterCrafterDesc = "Uses Hyperium and Dilithium to create Antimatter in batches of 20 (4 stacks)"\
+	BulkAntimatterCrafterDesc = "Uses Hyperium and Dilithium to create Antimatter"\
 								"\n <cyan>1 Hyperium = 1 Antimatter</cyan>"\
 								"\n <cyan>1 Dilithium = 10 Antimatter</cyan>"\
-								"\n<good> This factory only produces in batches of 20, it can consume hyperium and dilithium at the same time but doesn't require both to function.</good>"
+								"\n<good> This factory can consume either hyperium or dilithium, or both at the same time.</good>"\
+								"\n<bad><sup>For safety reasons, this factory cannot receive the normal adjacency buff, but will provide it still.</sup></bad>"
 	
 	FactoryTorpedoPart = "Torpedo Factory"
 	FactoryTorpedoPartIcon = "Torpedo Factory"
@@ -241,4 +276,19 @@ Parts
 	DepositDuranium_STAFA3xIcon = "Duranium Deposit (3x Soft)"
 	DepositDuranium_STAFA3xHard = "Duranium Deposit (3x Hard)"
 	DepositDuranium_STAFA3xHardIcon = "Duranium Deposit (3x Hard)"
+
+	DepositLatinumCrystal1x = "Crystallised Latinum Deposit (1x Soft)"
+	DepositLatinumCrystal1xIcon = "Crystallised Latinum Deposit (1x Soft)"
+	DepositLatinumCrystal1xHard = "Crystallised Latinum Deposit (1x Hard)"
+	DepositLatinumCrystal1xHardIcon = "Crystallised Latinum Deposit (1x Hard)"
+
+	DepositLatinumCrystal2x = "Crystallised Latinum Deposit (2x Soft)"
+	DepositLatinumCrystal2xIcon = "Crystallised Latinum Deposit (2x Soft)"
+	DepositLatinumCrystal2xHard = "Crystallised Latinum Deposit (2x Hard)"
+	DepositLatinumCrystal2xHardIcon = "Crystallised Latinum Deposit (2x Hard)"
+
+	DepositLatinumCrystal3x = "Crystallised Latinum Deposit (3x Soft)"
+	DepositLatinumCrystal3xIcon = "Crystallised Latinum Deposit (3x Soft)"
+	DepositLatinumCrystal3xHard = "Crystallised Latinum Deposit (3x Hard)"
+	DepositLatinumCrystal3xHardIcon = "Crystallised Latinum Deposit (3x Hard)"
 }

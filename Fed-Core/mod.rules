@@ -1,6 +1,6 @@
 ID = "st-afa.beta_coremod"
 Name = "[Beta] ST-AFA - Core"
-Version = "[Beta] 0.4.0.1"
+Version = "[Beta] 0.4.0.2"
 CompatibleGameVersions = ["0.30.4c"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
@@ -15,7 +15,8 @@ Description = "For full details please see Steam Workshop\n\n"\
 			  "- adds new resource: duranium and factories\n"
 StringsFolder = "strings"
 
-Actions
+Actions:
+&<adaptations.rules>/Adaptations
 [
 	//******************** Render Layers ********************
 	{
@@ -220,6 +221,23 @@ Actions
 			SortOrder = 300
 		}
 	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "LatinumCrystal"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "Resource/LatinumCrystal"
+			Icon
+			{
+				Texture = &<resources/latinum/latinum_crystal/latinum_crystal.rules>/Overlay/Texture
+				VertexColor = [0, 183, 255]
+			}
+			SortOrder = 300
+		}
+	}
 	
 	{
 		Action = Add
@@ -229,7 +247,7 @@ Actions
 		IgnoreIfNotExisting = true
 		ToAdd
 		{
-			NameKey = "EditorGroups/Borg"	// to be changed to Starfleet
+			NameKey = "EditorGroups/Borg"	
 			Icon
 			{
 				Texture
@@ -318,6 +336,461 @@ Actions
 		OnlyIfNotExisting = false
 	}
 
+	//New colour rarity for latinum
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/resources/resources.rules>/Nuggets/Rarities"
+		Overrides
+		{
+			UltraRare
+			{
+				UseFogDot = true;
+				BucketOrder = 5
+				FogDotSprite
+				{
+					Shader = "./Data/pivot.shader"
+					Texture = "./Data/gui/dot.png"
+					VertexColor = [255, 218, 95, 232] // yellow
+					Size = [0.25, 0.25]
+				}
+				FogDotSizeExponent = 0.85
+			}
+		}
+	}
+
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>"
+		Overrides
+		{
+			CloudyNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_s;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_m;     ChanceWeight=1/64; }
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>"
+		Overrides
+		{
+			CloudyNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_s;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_m;     ChanceWeight=1/64; }
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>"
+		Overrides
+		{
+			CloudyNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_s;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_m;     ChanceWeight=1/64; }
+			]
+		}
+	}
+
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>"
+		Overrides
+		{
+			ElectronNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_l;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_xl;     ChanceWeight=1/64; }
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>"
+		Overrides
+		{
+			ElectronNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_l;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_xl;     ChanceWeight=1/64; }
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_electron_nebulas.rules>"
+		Overrides
+		{
+			ElectronNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_l;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_xl;     ChanceWeight=1/64; }
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>"
+		Overrides
+		{
+			ElectronNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_l;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_xl;     ChanceWeight=1/64; }
+			]
+		}
+	}
+
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>"
+		Overrides
+		{
+			IonNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_xl;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_xxl;     ChanceWeight=1/64; }
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>"
+		Overrides
+		{
+			IonNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_xl;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_xxl;     ChanceWeight=1/64; }
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>"
+		Overrides
+		{
+			IonNebulaAsteroidTypes
+			[
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/0 //asteroid_s
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/5 //asteroid_m
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/10 //asteroid_l
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/15 //asteroid_xl
+				&<./Data/modes/career/sectors/sysgen_asteroids.rules>/CommonAsteroidTypes/20 //asteroid_xxl
+				{ Type=stafa.asteroid_latinum_crystal_xl;     ChanceWeight=1/32; }
+				{ Type=stafa.asteroid_latinum_crystal_xxl;     ChanceWeight=1/64; }
+			]
+		}
+	}
+			
+
+	//Adding asteroid spawners to nebula, for latinum
+	//Cloudy
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>/SubSpawners/0"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [0, 10]
+					Distance = [1000, 2500]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>/CloudyNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>/SubSpawners/0"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [10, 100]
+					Distance = [0, 20000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>/CloudyNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>/SubSpawners/0"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [10, 100]
+					Distance = [0, 20000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>/CloudyNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+
+	//Electron
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>/SubSpawners/1"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [0, 15]
+					Distance = [0, 1000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>/ElectronNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>/SubSpawners/2"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [2, 20]
+					Distance = [0, 4000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>/ElectronNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>/SubSpawners/1"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [50, 200]
+					Distance = [0, 90000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>/ElectronNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_electron_nebulas.rules>/SubSpawners/0"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [25, 100]
+					Distance = [0, 25000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_electron_nebulas.rules>/ElectronNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+
+	//Ion
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>/SubSpawners/2"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [5, 15]
+					Distance = [0, 1000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_standard_nebulas.rules>/IonNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>/SubSpawners/3"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [4, 20]
+					Distance = [0, 1000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_high_density_nebulas.rules>/IonNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>/SubSpawners/2"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [10, 50]
+					Distance = [0, 2500]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>/IonNebulaAsteroidTypes
+				}
+			]
+		}
+	}
+	{
+		Action = Overrides
+		OverrideIn = "<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>/SubSpawners/3"
+		Overrides
+		{
+			SubSpawners
+			[
+				{
+					Type = Doodads
+					Count = [25, 100]
+					Distance = [0, 10000]
+					Tags = [rare_asteroid, asteroid]
+					MinDistanceFromTags
+					[
+						[rare_asteroid, 500]
+						[asteroid, 100]
+					]
+					SuppressLocationAssertions = true
+					DoodadTypes = &<./Data/modes/career/sectors/sysgen_supernova_nebulas.rules>/IonNebulaAsteroidTypes
+				}
+			]
+		}
+	}
 	//******************** TECHS ********************
 	{
 		Action = AddMany
@@ -456,6 +929,11 @@ Actions
 			{ ResourceType=quantum_torpedo_part;   			RandomWeight=15;  RandomQuantity=[50%, 100%]; }
 			{ ResourceType=tricobalt_torpedo_part;   			RandomWeight=10;  RandomQuantity=[25%, 100%]; }
 			{ ResourceType=transphasic_torpedo_part;   			RandomWeight=3;  RandomQuantity=[10%, 100%]; }
+			{ ResourceType=latinum_crystal;   			RandomWeight=3;  RandomQuantity=[10%, 100%]; }
+//			{ ResourceType=latinum_slip;   			RandomWeight=10;  RandomQuantity=[10%, 100%]; }
+//			{ ResourceType=latinum_strip;   			RandomWeight=8;  RandomQuantity=[10%, 100%]; }
+//			{ ResourceType=latinum_bar;   			RandomWeight=2;  RandomQuantity=[10%, 100%]; }
+			{ ResourceType=latinum_brick;   			RandomWeight=.1;  RandomQuantity=[50%, 100%]; }
 		]
 	}
 	//******************** Asteroids ********************
@@ -477,6 +955,13 @@ Actions
 			&<asteroids/deposit_duranium/deposit_duranium_2x_hard.rules>/Part
 			&<asteroids/deposit_duranium/deposit_duranium_3x.rules>/Part
 			&<asteroids/deposit_duranium/deposit_duranium_3x_hard.rules>/Part
+
+			&<asteroids/deposit_latinum_crystal/deposit_latinum_crystal_1x.rules>/Part
+			&<asteroids/deposit_latinum_crystal/deposit_latinum_crystal_1x_hard.rules>/Part
+			&<asteroids/deposit_latinum_crystal/deposit_latinum_crystal_2x.rules>/Part
+			&<asteroids/deposit_latinum_crystal/deposit_latinum_crystal_2x_hard.rules>/Part
+			&<asteroids/deposit_latinum_crystal/deposit_latinum_crystal_3x.rules>/Part
+			&<asteroids/deposit_latinum_crystal/deposit_latinum_crystal_3x_hard.rules>/Part
 		]
 	}
 	{
@@ -516,6 +1001,12 @@ Actions
 
 			{ Type=stafa.asteroid_duranium_xl;     ChanceWeight=1; }
 			{ Type=stafa.asteroid_duranium_xxl;     ChanceWeight=1/2; }
+			
+			{ Type=stafa.asteroid_latinum_crystal_s;     ChanceWeight=1/4; }
+			{ Type=stafa.asteroid_latinum_crystal_m;     ChanceWeight=1/8; }
+			{ Type=stafa.asteroid_latinum_crystal_l;     ChanceWeight=1/16; }
+			{ Type=stafa.asteroid_latinum_crystal_xl;     ChanceWeight=1/32; }
+			{ Type=stafa.asteroid_latinum_crystal_xxl;     ChanceWeight=1/64; }
 		]
 	}
 	//******************** UI ********************

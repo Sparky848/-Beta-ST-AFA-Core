@@ -1,0 +1,13 @@
+ID = stafa.resource_latinum_slip
+Type = Resource
+DescriptionKey = "Resource/LatinumSlip"
+CategoryKey = "Doodads/Resources"
+Icon
+{
+	Texture
+	{
+		File = "latinum_slip.png"
+		MipLevels = 2
+	}
+}
+ResourceType = latinum_slip

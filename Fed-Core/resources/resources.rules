@@ -11,4 +11,9 @@ Resources
 	&<cloudy_gas/cloudy_gas.rules>
 	&<electron_gas/electron_gas.rules>
 	&<ion_gas/ion_gas.rules>
+	&<latinum/latinum_crystal/latinum_crystal.rules>
+//	&<latinum/latinum_slip/latinum_slip.rules>
+//	&<latinum/latinum_strip/latinum_strip.rules>
+//	&<latinum/latinum_bar/latinum_bar.rules>
+	&<latinum/latinum_brick/latinum_brick.rules>
 ]

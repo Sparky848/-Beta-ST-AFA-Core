@@ -1,0 +1,13 @@
+ID = stafa.resource_latinum_crystal
+Type = Resource
+DescriptionKey = "Resource/LatinumCrystal"
+CategoryKey = "Doodads/Resources"
+Icon
+{
+	Texture
+	{
+		File = "latinum_crystal.png"
+		MipLevels = 2
+	}
+}
+ResourceType = latinum_crystal

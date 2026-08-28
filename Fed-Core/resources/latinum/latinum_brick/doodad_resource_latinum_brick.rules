@@ -1,0 +1,13 @@
+ID = stafa.resource_latinum_brick
+Type = Resource
+DescriptionKey = "Resource/LatinumBrick"
+CategoryKey = "Doodads/Resources"
+Icon
+{
+	Texture
+	{
+		File = "latinum_brick.png"
+		MipLevels = 2
+	}
+}
+ResourceType = latinum_brick

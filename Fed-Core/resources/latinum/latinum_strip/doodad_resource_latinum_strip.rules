@@ -1,0 +1,13 @@
+ID = stafa.resource_latinum_strip
+Type = Resource
+DescriptionKey = "Resource/LatinumStrip"
+CategoryKey = "Doodads/Resources"
+Icon
+{
+	Texture
+	{
+		File = "latinum_strip.png"
+		MipLevels = 2
+	}
+}
+ResourceType = latinum_strip
