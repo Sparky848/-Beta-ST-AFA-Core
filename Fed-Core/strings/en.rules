@@ -48,7 +48,7 @@ Stats
 	AntimatterCapacityFmt = "<white>Antimatter Capacity:</white> <good>{0}</good>"
 	AntimatterPerTorpedoPartFmt = "<white>Antimatter Per Photon Part:</white> <good>{0}</good>"
 	AntimatterPerQuantumTorpedoPartFmt = "<white>Antimatter Per Quantum Part:</white> <good>{0}</good>"
-	AntimatterPerTricobaltTorpedoPartFmt = "<white>Antimatter Per TricobaltPart:</white> <good>{0}</good>"
+	AntimatterPerTricobaltTorpedoPartFmt = "<white>Antimatter Per Tricobalt Part:</white> <good>{0}</good>"
 	TorpedoPartAntimatterUsageFmt = "<white>Antimatter Per Photon Part:</white> <good>{0}</good><gray>/sec</gray>"
 	QuantumTorpedoPartAntimatterUsageFmt = "<white>Antimatter Per Quantum Part:</white> <good>{0}</good><gray>/sec</gray>"
 	TricobaltTorpedoPartAntimatterUsageFmt = "<white>Antimatter Per Tricobalt Part:</white> <good>{0}</good><gray>/sec</gray>"

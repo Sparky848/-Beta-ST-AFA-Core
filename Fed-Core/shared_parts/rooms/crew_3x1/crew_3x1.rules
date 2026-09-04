@@ -116,30 +116,99 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 					}
 				]
 			}
-			Roof
-			{
-				Layer = "roofs"
-				DamageLevels
-				[
-					{
-						File = "roof.png"
-						NormalsFile = "roof_normals.png"
-						Size = [3, 1]
-					}
-					{
-						File = "roof_33.png"
-						NormalsFile = "roof_normals_33.png"
-						Size = [3, 1]
-					}
-					{
-						File = "roof_66.png"
-						NormalsFile = "roof_normals_66.png"
-						Size = [3, 1]
-					}
-				]
-			}
+		}
+		RoofVisibilityToggle
+		{
+			Type = UIToggle
+			ToggleID = "roof_type_toggle_stafa"
+			Default = 0
+			AlwaysAllowInBuildMode = true
+			RequiresCommand = false
 		}
 
+		RoofVisibleMode
+		{
+			Type = ModeToggle
+			Mode = RoofVisibilityToggle
+			OnMode = 0
+		}
+
+		RoofHiddenMode
+		{
+			Type = ModeToggle
+			Mode = RoofVisibilityToggle
+			OnMode = 1
+		}
+		RoofVisibleGraphics
+		{
+			Type = ToggledComponents
+			Toggle = RoofVisibleMode
+			Components
+			{
+				RoofGraphics
+				{
+					Type = Graphics
+					Location = [1.5, .5]
+					Roof
+					{
+						Layer = "roofs"
+						DamageLevels
+						[
+							{
+								File = "roof.png"
+								NormalsFile = "roof_normals.png"
+								Size = [3, 1]
+							}
+							{
+								File = "roof_33.png"
+								NormalsFile = "roof_normals_33.png"
+								Size = [3, 1]
+							}
+							{
+								File = "roof_66.png"
+								NormalsFile = "roof_normals_66.png"
+								Size = [3, 1]
+							}
+						]
+					}
+				}
+			}
+		}
+		RoofHiddenGraphics
+		{
+			Type = ToggledComponents
+			Toggle = RoofHiddenMode
+			Components
+			{
+				Roof2Graphics
+				{
+					Type = Graphics
+					Location = [1.5, .5]
+					Roof
+					{
+						Layer = "roofs"
+						DamageLevels
+						[
+							{
+								File = "roof_alt.png"
+								NormalsFile = "roof_normals.png"
+								Size = [3, 1]
+							}
+							{
+								File = "roof_alt_33.png"
+								NormalsFile = "roof_normals_33.png"
+								Size = [3, 1]
+							}
+							{
+								File = "roof_alt_66.png"
+								NormalsFile = "roof_normals_66.png"
+								Size = [3, 1]
+							}
+						]
+					}
+				}
+			}
+		}
 		ColoredGraphics
 		{
 			Type = Graphics

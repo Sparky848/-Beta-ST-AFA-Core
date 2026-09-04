@@ -412,23 +412,74 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 							}
 						]
 					}
+				}
+			}
+		}
+
+		QuantumToggle
+		{
+			Type = ToggledComponents
+			Toggle = MakeQuantums
+			IncludeInBlueprints = true
+			Components = &<quantum/quantum_producer.rules>
+		}
+
+		TricobaltToggle
+		{
+			Type = ToggledComponents
+			Toggle = MakeTricobalts
+			IncludeInBlueprints = true
+			Components = &<tricobalt/tricobalt_producer.rules>
+		}
+		RoofVisibilityToggle
+		{
+			Type = UIToggle
+			ToggleID = "roof_type_toggle_stafa"
+			Default = 0
+			AlwaysAllowInBuildMode = true
+			RequiresCommand = false
+		}
+
+		RoofVisibleMode
+		{
+			Type = ModeToggle
+			Mode = RoofVisibilityToggle
+			OnMode = 0
+		}
+
+		RoofHiddenMode
+		{
+			Type = ModeToggle
+			Mode = RoofVisibilityToggle
+			OnMode = 1
+		}
+		RoofVisibleGraphics
+		{
+			Type = ToggledComponents
+			Toggle = RoofVisibleMode
+			Components
+			{
+				RoofGraphics
+				{
+					Type = Graphics
+					Location = [1, 1.5]
 					Roof
 					{
 						Layer = "roofs"
 						DamageLevels
 						[
 							{
-								File = "./Data/ships/terran/factory_diamond/roof1.png"
+								File = "roof.png"
 								NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1.png"
 								Size = [2, 3]
 							}
 							{
-								File = "./Data/ships/terran/factory_diamond/roof1_33.png"
+								File = "roof_33.png"
 								NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1_33.png"
 								Size = [2, 3]
 							}
 							{
-								File = "./Data/ships/terran/factory_diamond/roof1_66.png"
+								File = "roof_66.png"
 								NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1_66.png"
 								Size = [2, 3]
 							}
@@ -451,23 +502,41 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 				}
 			}
 		}
-
-		QuantumToggle
+		RoofHiddenGraphics
 		{
 			Type = ToggledComponents
-			Toggle = MakeQuantums
-			IncludeInBlueprints = true
-			Components = &<quantum/quantum_producer.rules>
+			Toggle = RoofHiddenMode
+			Components
+			{
+				Roof2Graphics
+				{
+					Type = Graphics
+					Location = [1, 1.5]
+					Roof
+					{
+						Layer = "roofs"
+						DamageLevels
+						[
+							{
+								File = "roof_alt.png"
+								NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1.png"
+								Size = [2, 3]
+							}
+							{
+								File = "roof_alt_33.png"
+								NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1_33.png"
+								Size = [2, 3]
+							}
+							{
+								File = "roof_alt_66.png"
+								NormalsFile = "./Data/ships/terran/factory_diamond/roof_normals1_66.png"
+								Size = [2, 3]
+							}
+						]
+					}
+				}
+			}
 		}
-
-		TricobaltToggle
-		{
-			Type = ToggledComponents
-			Toggle = MakeTricobalts
-			IncludeInBlueprints = true
-			Components = &<tricobalt/tricobalt_producer.rules>
-		}
-
 		BatterySprites
 		{
 			Type = ResourceSprites
@@ -596,9 +665,9 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		TorpedoPartProduction = Infinity //(&~/Part/Components/ResourceConverter/ToQuantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
 		TorpedoPartCapacity = (&~/Part/Components/PhotonToggle/Components/TorpedoPartStorage/GridRect/2) * (&~/Part/Components/PhotonToggle/Components/TorpedoPartStorage/GridRect/3) * (&<../../../resources/torpedo_part/torpedo_part.rules>/MaxStackSize)
 		AntimatterCapacity = &~/Part/Components/AntimatterStorage/MaxResources
-		AntimatterPerTorpedoPart = (&~/Part/Components/PhotonToggle/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/PhotonToggle/Components/ResourceConverter/ToQuantity)
-		AntimatterPerQuantumTorpedoPart = (&~/Part/Components/QuantumToggle/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/QuantumToggle/Components/ResourceConverter/ToQuantity)
-		AntimatterPerTricobaltTorpedoPart = (&~/Part/Components/TricobaltToggle/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/TricobaltToggle/Components/ResourceConverter/ToQuantity)
+		AntimatterPerTorpedoPart = ((&~/Part/Components/AntimatterSplitter/ToQuantity) / (&~/Part/Components/PhotonToggle/Components/ResourceConverter/From/0/Quantity)) / (&~/Part/Components/PhotonToggle/Components/ResourceConverter/ToQuantity)
+		AntimatterPerQuantumTorpedoPart = ((&~/Part/Components/AntimatterSplitter/ToQuantity) / (&~/Part/Components/QuantumToggle/Components/ResourceConverter/From/0/Quantity)) / (&~/Part/Components/QuantumToggle/Components/ResourceConverter/ToQuantity)
+		AntimatterPerTricobaltTorpedoPart = ((&~/Part/Components/AntimatterSplitter/ToQuantity) / (&~/Part/Components/TricobaltToggle/Components/ResourceConverter/From/0/Quantity)) / (&~/Part/Components/TricobaltToggle/Components/ResourceConverter/ToQuantity)
 		AntimatterPerSecond = Infinity //(&~/Part/Components/ResourceConverter/From/0/Quantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
 		TorpedoPartAntimatterUsage = [&../AntimatterPerTorpedoPart, &~/Part/Components/PhotonToggle/Components/ResourceConverter/Interval/BaseValue]
 		QuantumTorpedoPartAntimatterUsage = [&../AntimatterPerQuantumTorpedoPart, &~/Part/Components/QuantumToggle/Components/ResourceConverter/Interval/BaseValue]

@@ -438,78 +438,122 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 					}
 				]
 			}
-			OperationalRoofDoodad
+		}
+		RoofVisibilityToggle
+		{
+			Type = UIToggle
+			ToggleID = "roof_type_toggle_stafa"
+			Default = 0
+			AlwaysAllowInBuildMode = true
+			RequiresCommand = false
+		}
+
+		RoofVisibleMode
+		{
+			Type = ModeToggle
+			Mode = RoofVisibilityToggle
+			OnMode = 0
+		}
+
+		RoofHiddenMode
+		{
+			Type = ModeToggle
+			Mode = RoofVisibilityToggle
+			OnMode = 1
+		}
+		RoofVisibleGraphics
+		{
+			Type = ToggledComponents
+			Toggle = RoofVisibleMode
+			Components
 			{
-				Layer = "roof_turrets"
-				//Offset = [0, 1]
-				DamageLevels
-				[
+				RoofGraphics
+				{
+					Type = Graphics
+					Location = [1, .5]
+					OperationalRoofDoodad
 					{
-						AnimationFiles
+						Layer = "roof_turrets"
+						//Offset = [0, 1]
+						DamageLevels
 						[
-							"roof_doodads_1.png"
-							"roof_doodads_2.png"
-							"roof_doodads_3.png"
-							"roof_doodads_4.png"
-							"roof_doodads_5.png"
-							"roof_doodads_6.png"
-							"roof_doodads_7.png"
-							"roof_doodads_8.png"
+							{
+								AnimationFiles
+								[
+									"roof_doodads_1.png"
+									"roof_doodads_2.png"
+									"roof_doodads_3.png"
+									"roof_doodads_4.png"
+									"roof_doodads_5.png"
+									"roof_doodads_6.png"
+									"roof_doodads_7.png"
+									"roof_doodads_8.png"
+								]
+								Size = [2, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+							{
+								AnimationFiles
+								[
+									"roof_doodads_1.png"
+									"roof_doodads_2.png"
+									"roof_doodads_3.png"
+									"roof_doodads_4.png"
+									"roof_doodads_5.png"
+									"roof_doodads_6.png"
+									"roof_doodads_7.png"
+									"roof_doodads_8.png"
+								]
+								Size = [2, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
+							{
+								AnimationFiles
+								[
+									"roof_doodads_1.png"
+									"roof_doodads_2.png"
+									"roof_doodads_3.png"
+									"roof_doodads_4.png"
+									"roof_doodads_5.png"
+									"roof_doodads_6.png"
+									"roof_doodads_7.png"
+									"roof_doodads_8.png"
+								]
+								Size = [2, 1]
+								AnimationInterval = 0.1
+								AnimationStartTime = WhenSpawned
+								ClampAnimation = true
+							}
 						]
-						Size = [2, 1]
-						AnimationInterval = 0.1
-						AnimationStartTime = WhenSpawned
-						ClampAnimation = true
 					}
+					OperationalRoofLighting
 					{
-						AnimationFiles
+						Layer = "roof_lights_fancy"
+						//Offset = [0, -29/64]
+						DamageLevels
 						[
-							"roof_doodads_1.png"
-							"roof_doodads_2.png"
-							"roof_doodads_3.png"
-							"roof_doodads_4.png"
-							"roof_doodads_5.png"
-							"roof_doodads_6.png"
-							"roof_doodads_7.png"
-							"roof_doodads_8.png"
+							{
+								File = "./Data/ships/common/light_blob.png"
+								Size = [2, 2]
+								Z = 0.5 // Controls the "height" of the light for the purposes of normal mapping. Set to -1 (or any negative number) to disable normal lighting for this light.
+								VertexColor = [44,86,255]
+							}
 						]
-						Size = [2, 1]
-						AnimationInterval = 0.1
-						AnimationStartTime = WhenSpawned
-						ClampAnimation = true
 					}
-					{
-						AnimationFiles
-						[
-							"roof_doodads_1.png"
-							"roof_doodads_2.png"
-							"roof_doodads_3.png"
-							"roof_doodads_4.png"
-							"roof_doodads_5.png"
-							"roof_doodads_6.png"
-							"roof_doodads_7.png"
-							"roof_doodads_8.png"
-						]
-						Size = [2, 1]
-						AnimationInterval = 0.1
-						AnimationStartTime = WhenSpawned
-						ClampAnimation = true
-					}
-				]
+				}
 			}
-			OperationalRoofLighting
+		}
+		RoofHiddenGraphics
+		{
+			Type = ToggledComponents
+			Toggle = RoofHiddenMode
+			Components
 			{
-				Layer = "roof_lights_fancy"
-				//Offset = [0, -29/64]
-				DamageLevels
-				[
-					{
-						File = "./Data/ships/common/light_blob.png"
-						Size = [2, 2]
-						Z = 0.5 // Controls the "height" of the light for the purposes of normal mapping. Set to -1 (or any negative number) to disable normal lighting for this light.
-						VertexColor = [44,86,255]
-					}
-				]
+				//we want to remove the light, therefore nothing
 			}
 		}
 		OSDGraphics
@@ -965,7 +1009,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 					AtlasSprite
 					{
 						File = &/INDICATORS/PowerOff
-						Size = [1, 1]
+						Size = [2, 1]
 					}
 				}
 
@@ -976,7 +1020,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 					AtlasSprite
 					{
 						File = &/INDICATORS/NoPower
-						Size = [1, 1]
+						Size = [2, 1]
 					}
 				}
 			]
