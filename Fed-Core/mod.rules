@@ -1,6 +1,6 @@
 ID = "st-afa.beta_coremod"
 Name = "[Beta] ST-AFA - Core"
-Version = "[Beta] 0.4.0.3"
+Version = "[Beta] 0.4.0.4"
 CompatibleGameVersions = ["0.30.4c"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
@@ -842,6 +842,36 @@ Actions:
 		IgnoreIfNotExisting = false
 		With = 2.5
 	}
+	{
+		Action = Replace
+		Replace = "<gui/game/comms/comms_gui.rules>/HailingSound"
+		IgnoreIfNotExisting = false
+		With 
+		{
+			RandomSounds = ["sounds/st_hailing.wav"]
+			Volume = 2
+		} 
+	}
+	{
+		Action = Replace
+		Replace = "<gui/game/comms/comms_gui.rules>/HailAnsweredSound"
+		IgnoreIfNotExisting = false
+		With
+		{
+			RandomSounds = ["sounds/st_hail_answered.wav", "sounds/st_hail_answered_3.wav"]
+			Volume = 1.1
+		}
+	}
+	{
+		Action = Replace
+		Replace = "<gui/game/comms/comms_gui.rules>/HailFailedSound"
+		IgnoreIfNotExisting = false
+		With
+		{
+			RandomSounds = ["sounds/st_hail_failed.wav", "sounds/st_hail_answered_2.wav", "sounds/st_hail_answered_3.wav"]
+			Volume = 1.1
+		}
+	}
 	//******************** BUFFS ********************
 	{
 		Action = Overrides
@@ -1224,6 +1254,23 @@ Actions:
 				ProportionalSize = true
 			}
 		}
+	}
+	//************Jani's Shipyard Additions************
+	//Toggles
+	{
+		Action = AddMany
+		AddTo = "<../../../workshop/content/799600/2880017812/gui/part_toggles_speakers.rules>/PartToggles/1/Choices"
+		ManyToAdd = &<jani_speaker_gubbins/jani_speaker_toggles.rules>/LoopingToggles
+		OnlyIfNotExisting = true
+		IgnoreIfNotExisting = true
+	}
+	//Looping Sounds
+	{
+		Action = Overrides
+		OverrideIn = "<../../../workshop/content/799600/2880017812/Parts/Logic/Speaker/loopingspeaker.rules>/Part/Components"
+		Overrides = &<jani_speaker_gubbins/jani_speaker_looping_sounds.rules>/Sounds
+		OnlyIfNotExisting = true
+		IgnoreIfNotExisting = true
 	}
 ]
 

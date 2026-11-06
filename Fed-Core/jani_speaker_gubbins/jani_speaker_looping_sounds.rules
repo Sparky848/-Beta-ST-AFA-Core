@@ -1,0 +1,66 @@
+Sounds
+{	
+	//OnMode Starting @ 1430
+	STAFA_RedAlertToggle
+	{
+		Type = ModeToggle
+		Mode = InstrumentType
+		OnMode = 1430
+	}
+	STAFA_RedAlertComponents
+	{
+		Type = ToggledComponents
+		Toggle = STAFA_RedAlertToggle
+		IncludeInBlueprints = true
+		Components
+		{
+			STAFA_RedAlertSoundEffects
+			{
+				Type = ContinuousEffects
+				Location = [0.5, 0.5]
+				OperationalToggle = LocalRangeToggled
+				FactorMediaEffectsIntensityWith = FinalTuning//12ToneEqualTemperament
+				//IntensityTweenDuration = 0.1
+				ParentToShip = true
+				UpdateMediaBuffs = true
+				MediaEffects
+				[
+					: /BASE_SOUNDS/AudioExterior
+					{
+						Sound = "jani_speaker_sounds/red_alert.wav"
+						Volume = { BaseValue=0.15; BuffType=SpeakerVolumeBuff; BuffMode=Multiply; }
+						VolumeOverIntensity = [1, 1]
+						SpeedOverIntensity = [0, 99+12]
+						IntensityBounds = [0, 99+12]
+						Speed = 1 / 2^2 // c1
+						MaxConcurrent = 0
+						RampDownTime = .05
+						OnlyWhenInSight = false
+						MaxConcurrentVolume = .8
+						//IgnoreIntensity = true
+					}
+				]
+			}
+			GlobalSTAFA_RedAlertSoundEffectss : &STAFA_RedAlertSoundEffects
+			{
+				OperationalToggle = GlobalRangeToggled
+				MediaEffects
+				[
+					//: /BASE_SOUNDS/AudioExteriorLongRange
+					{
+						Type = Audio
+						Sound = "jani_speaker_sounds/red_alert.wav"
+						Volume = { BaseValue=0.15; BuffType=SpeakerVolumeBuff; BuffMode=Multiply; }
+						VolumeOverIntensity = [1, 1]
+						SpeedOverIntensity = [0, 99+12]
+						IntensityBounds = [0, 99+12]
+						Speed = 1 / 2^3 // c1
+						MaxConcurrent = 0
+						RampDownTime = .05
+						OnlyWhenInSight = false
+					}
+				]
+			}
+		}
+	}
+}

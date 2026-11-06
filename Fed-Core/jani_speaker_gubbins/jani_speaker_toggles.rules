@@ -1,0 +1,18 @@
+LoopingToggles
+[
+	{
+		ChoiceID = "speakertype_stafa_red_alert"
+		ButtonSprite
+		{
+			Texture
+			{
+				File = "speakericon_stafa_red_alert.png"
+				MipLevels = 2
+				SampleMode = Linear
+			}
+			VertexColor = [0, 183, 255]
+		}
+        Mode = 1430
+		ButtonToolTipKey = "PartToggles/speakertype_stafa_red_alert"
+	}
+]

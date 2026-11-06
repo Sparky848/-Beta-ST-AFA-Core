@@ -153,6 +153,8 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Type = ResourceStorage
 			ResourceType = antimatter
 			MaxResources = 140
+			AllowExternalPickupAndDelivery = false
+			SuppliesResources = false
 		}
 		InternalCapacity
 		{

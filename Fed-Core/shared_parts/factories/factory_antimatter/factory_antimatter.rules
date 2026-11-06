@@ -135,6 +135,8 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			Type = ResourceStorage
 			ResourceType = ion_energy
 			MaxResources = 5
+			AllowExternalPickupAndDelivery = false
+			SuppliesResources = false
 		}
 		ResourceConverter2
 		{
